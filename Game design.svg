@@ -1,0 +1,632 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="557.78815mm"
+   height="414.77194mm"
+   viewBox="0 0 557.78814 414.77194"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   sodipodi:docname="Game design.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.64111042"
+     inkscape:cx="1918.5463"
+     inkscape:cy="985.78962"
+     inkscape:window-width="1920"
+     inkscape:window-height="1011"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <rect
+       x="335.13022"
+       y="1254.0741"
+       width="273.54883"
+       height="174.64206"
+       id="rect2050" />
+    <rect
+       x="13.130295"
+       y="1198.537"
+       width="761.42914"
+       height="385.51886"
+       id="rect2044" />
+    <rect
+       x="1675.7852"
+       y="446.54578"
+       width="444.40717"
+       height="159.25128"
+       id="rect1886" />
+    <rect
+       x="12.898763"
+       y="1221.6049"
+       width="778.76355"
+       height="720.8623"
+       id="rect1868" />
+    <rect
+       x="829.37762"
+       y="987.38599"
+       width="1260.8921"
+       height="312.14764"
+       id="rect1862" />
+    <rect
+       x="1655.6235"
+       y="33.785374"
+       width="601.51373"
+       height="510.38766"
+       id="rect1729" />
+    <rect
+       x="668.55261"
+       y="-49.311489"
+       width="1101.7614"
+       height="516.71967"
+       id="rect1284" />
+  </defs>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(8.2250979,32.646347)">
+    <rect
+       style="fill:#ffffff;fill-rule:evenodd;stroke-width:25.7404;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       id="rect405"
+       width="558.54456"
+       height="415.21994"
+       x="-9.4535112"
+       y="-32.70438" />
+    <rect
+       style="fill:#b3b3b3;fill-rule:evenodd;stroke-width:5.764;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       id="rect234"
+       width="28.963396"
+       height="32.87571"
+       x="71.086685"
+       y="74.873802" />
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:18.5208px;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans, Bold';fill:#b3b3b3;fill-rule:evenodd;stroke-width:5.764;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       x="52.018082"
+       y="98.020149"
+       id="text395"><tspan
+         sodipodi:role="line"
+         id="tspan393"
+         style="fill:#000000;stroke-width:5.764"
+         x="52.018082"
+         y="98.020149">Player</tspan></text>
+    <rect
+       style="fill:#ff0000;fill-rule:evenodd;stroke-width:5.764;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       id="rect659"
+       width="18.007807"
+       height="18.163183"
+       x="17.692587"
+       y="57.629456" />
+    <rect
+       style="fill:#ff0000;fill-rule:evenodd;stroke-width:5.764;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       id="rect659-2"
+       width="18.007807"
+       height="18.163183"
+       x="49.658405"
+       y="47.86377" />
+    <rect
+       style="fill:#ff0000;fill-rule:evenodd;stroke-width:5.764;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       id="rect659-9"
+       width="18.007807"
+       height="18.163183"
+       x="77.988007"
+       y="45.288353" />
+    <rect
+       style="fill:#ff0000;fill-rule:evenodd;stroke-width:5.764;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       id="rect659-1"
+       width="18.007807"
+       height="18.163183"
+       x="109.7515"
+       y="49.866875" />
+    <rect
+       style="fill:#ff0000;fill-rule:evenodd;stroke-width:5.764;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       id="rect659-27"
+       width="18.007807"
+       height="18.163183"
+       x="135.79184"
+       y="66.750175" />
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:13.4859px;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans, Bold';fill:#ff0000;fill-rule:evenodd;stroke-width:4.19704;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       x="58.259315"
+       y="62.86277"
+       id="text860"><tspan
+         sodipodi:role="line"
+         id="tspan858"
+         style="fill:#000000;stroke-width:4.19704"
+         x="58.259315"
+         y="62.86277">Minions</tspan></text>
+    <rect
+       style="fill:#00ff00;fill-rule:evenodd;stroke-width:5.764;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       id="rect912"
+       width="28.628056"
+       height="30.039841"
+       x="7.8704519"
+       y="4.3080134" />
+    <rect
+       style="fill:#00ff00;fill-rule:evenodd;stroke-width:5.764;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       id="rect912-9"
+       width="28.628056"
+       height="30.039841"
+       x="46.106583"
+       y="3.8430076" />
+    <rect
+       style="fill:#00ff00;fill-rule:evenodd;stroke-width:5.764;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       id="rect912-3"
+       width="28.628056"
+       height="30.039841"
+       x="86.804672"
+       y="2.7989793" />
+    <rect
+       style="fill:#00ff00;fill-rule:evenodd;stroke-width:5.764;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       id="rect912-6"
+       width="28.628056"
+       height="30.039841"
+       x="122.84936"
+       y="2.822453" />
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:18.5208px;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans, Bold';fill:#000000;fill-rule:evenodd;stroke-width:5.764;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       x="43.153908"
+       y="23.080399"
+       id="text1048"><tspan
+         sodipodi:role="line"
+         id="tspan1046"
+         style="fill:#000000;stroke-width:5.764"
+         x="43.153908"
+         y="23.080399">Enemy</tspan></text>
+    <rect
+       style="fill:#0000ff;fill-rule:evenodd;stroke-width:5.764;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       id="rect1102"
+       width="19.490015"
+       height="30.158327"
+       x="15.530756"
+       y="119.39017" />
+    <rect
+       style="fill:#0000ff;fill-rule:evenodd;stroke-width:5.764;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       id="rect1102-0"
+       width="19.490015"
+       height="30.158327"
+       x="45.509117"
+       y="119.39017" />
+    <rect
+       style="fill:#0000ff;fill-rule:evenodd;stroke-width:5.764;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       id="rect1102-6"
+       width="19.490015"
+       height="30.158327"
+       x="74.411034"
+       y="119.39017" />
+    <rect
+       style="fill:#0000ff;fill-rule:evenodd;stroke-width:5.764;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       id="rect1102-2"
+       width="19.490015"
+       height="30.158327"
+       x="107.60532"
+       y="119.39017" />
+    <rect
+       style="fill:#0000ff;fill-rule:evenodd;stroke-width:5.764;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       id="rect1102-61"
+       width="19.490015"
+       height="30.158327"
+       x="131.64256"
+       y="119.39017" />
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:18.5208px;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans, Bold';fill:#0000ff;fill-rule:evenodd;stroke-width:5.764;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       x="56.836937"
+       y="141.3708"
+       id="text1224"><tspan
+         sodipodi:role="line"
+         id="tspan1222"
+         style="fill:#000000;stroke-width:5.764"
+         x="56.836937"
+         y="141.3708">Card</tspan></text>
+    <rect
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:7.22842;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       id="rect1276"
+       width="266.49533"
+       height="167.97888"
+       x="-4.610888"
+       y="-8.6964588" />
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:18.5208px;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans, Bold';fill:#000000;fill-rule:evenodd;stroke:none;stroke-width:5.764;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       x="70.010239"
+       y="-19.144611"
+       id="text1280"><tspan
+         sodipodi:role="line"
+         id="tspan1278"
+         style="fill:#000000;stroke:none;stroke-width:5.764"
+         x="70.010239"
+         y="-19.144611">UI</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.18089335,0,0,0.2132495,-128.63213,179.06445)"
+       id="text1282"
+       style="font-weight:bold;font-size:70px;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans, Bold';white-space:pre;shape-inside:url(#rect1284);display:inline;fill:#000000;fill-rule:evenodd;stroke:none;stroke-width:21.7852;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"><tspan
+         x="668.55273"
+         y="12.623047"
+         id="tspan588">Turn :
+</tspan><tspan
+         x="668.55273"
+         y="100.12305"
+         id="tspan590">0 - Status effect and Draw
+</tspan><tspan
+         x="668.55273"
+         y="187.62305"
+         id="tspan592">1 - Player Cards
+</tspan><tspan
+         x="668.55273"
+         y="275.12305"
+         id="tspan594">2 - Hero attack
+</tspan><tspan
+         x="668.55273"
+         y="362.62305"
+         id="tspan596">3 - Enemy Attack Hero
+</tspan><tspan
+         x="668.55273"
+         y="450.12305"
+         id="tspan598">4 - Minion blocking phase
+</tspan></text>
+    <rect
+       style="fill:#ffff00;fill-rule:evenodd;stroke:none;stroke-width:5.764;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       id="rect1288"
+       width="81.17598"
+       height="144.09488"
+       x="170.21907"
+       y="1.1770467" />
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:18.5208px;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans, Bold';text-align:center;text-anchor:middle;fill:#000000;fill-rule:evenodd;stroke:none;stroke-width:5.764;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       x="211.30054"
+       y="56.016464"
+       id="text1396"><tspan
+         sodipodi:role="line"
+         id="tspan1394"
+         style="text-align:center;text-anchor:middle;stroke-width:5.764"
+         x="211.30054"
+         y="56.016464">Map</tspan><tspan
+         sodipodi:role="line"
+         style="text-align:center;text-anchor:middle;stroke-width:5.764"
+         x="211.30054"
+         y="79.167465"
+         id="tspan1398">+</tspan><tspan
+         sodipodi:role="line"
+         style="text-align:center;text-anchor:middle;stroke-width:5.764"
+         x="211.30054"
+         y="102.31847"
+         id="tspan1400">Data</tspan><tspan
+         sodipodi:role="line"
+         style="text-align:center;text-anchor:middle;stroke-width:5.764"
+         x="211.30054"
+         y="125.46946"
+         id="tspan1402">(hover)</tspan><tspan
+         sodipodi:role="line"
+         style="text-align:center;text-anchor:middle;stroke-width:5.764"
+         x="211.30054"
+         y="148.62047"
+         id="tspan1404" /></text>
+    <rect
+       style="fill:#ff0000;fill-rule:evenodd;stroke:none;stroke-width:5.764;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       id="rect1406"
+       width="70.84819"
+       height="87.091629"
+       x="315.65698"
+       y="3.048583" />
+    <rect
+       style="fill:#008080;fill-rule:evenodd;stroke:none;stroke-width:5.764;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       id="rect1460"
+       width="23.968576"
+       height="35.557903"
+       x="315.9826"
+       y="66.83017" />
+    <rect
+       style="fill:#ff00ff;fill-rule:evenodd;stroke:none;stroke-width:5.764;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       id="rect1460-8"
+       width="23.968576"
+       height="35.557903"
+       x="362.71875"
+       y="66.83017" />
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:18.5208px;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans, Bold';text-align:center;text-anchor:middle;fill:#ff00ff;fill-rule:evenodd;stroke:none;stroke-width:5.764;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       x="317.75269"
+       y="-12.055102"
+       id="text1697"><tspan
+         sodipodi:role="line"
+         id="tspan1695"
+         style="fill:#000000;stroke-width:5.764"
+         x="317.75269"
+         y="-12.055102">Unit :</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:18.5208px;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans, Bold';text-align:center;text-anchor:middle;fill:#000000;fill-rule:evenodd;stroke:none;stroke-width:5.764;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       x="347.1524"
+       y="35.387135"
+       id="text1701"><tspan
+         sodipodi:role="line"
+         id="tspan1699"
+         style="stroke-width:5.764"
+         x="347.1524"
+         y="35.387135">img</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:18.5208px;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans, Bold';text-align:center;text-anchor:middle;fill:#000000;fill-rule:evenodd;stroke:none;stroke-width:5.764;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       x="327.93668"
+       y="91.613632"
+       id="text1705"><tspan
+         sodipodi:role="line"
+         id="tspan1703"
+         style="stroke-width:5.764"
+         x="327.93668"
+         y="91.613632">HP</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:18.5208px;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans, Bold';text-align:center;text-anchor:middle;fill:#000000;fill-rule:evenodd;stroke:none;stroke-width:5.764;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       x="375.28256"
+       y="91.208588"
+       id="text1709"><tspan
+         sodipodi:role="line"
+         id="tspan1707"
+         style="stroke-width:5.764"
+         x="375.28256"
+         y="91.208588">ATK</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:18.5208px;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans, Bold';text-align:start;text-anchor:start;fill:#000000;fill-rule:evenodd;stroke:none;stroke-width:5.764;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       x="275.11768"
+       y="138.11768"
+       id="text1719"><tspan
+         sodipodi:role="line"
+         id="tspan1717"
+         style="text-align:start;text-anchor:start;stroke-width:5.764"
+         x="275.11768"
+         y="138.11768">Fight logic :</tspan><tspan
+         sodipodi:role="line"
+         style="text-align:start;text-anchor:start;stroke-width:5.764"
+         x="275.11768"
+         y="161.26868"
+         id="tspan1721">1 - pre-fight effect</tspan><tspan
+         sodipodi:role="line"
+         style="text-align:start;text-anchor:start;stroke-width:5.764"
+         x="275.11768"
+         y="184.41968"
+         id="tspan1723">2 - HP - op ATK = new HP</tspan><tspan
+         sodipodi:role="line"
+         style="text-align:start;text-anchor:start;stroke-width:5.764"
+         x="275.11768"
+         y="207.57068"
+         id="tspan1725">3 - post-fight/death effect</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-8.2250979,-32.646347)"
+       id="text1727"
+       style="font-weight:bold;font-size:24px;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans, Bold';text-align:start;white-space:pre;shape-inside:url(#rect1729);display:inline;fill:#000000;fill-rule:evenodd;stroke:none;stroke-width:21.7852;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"><tspan
+         x="1655.623"
+         y="62.097656"
+         id="tspan602"><tspan
+           style="font-size:32px"
+           id="tspan600">Unit prefight effect :
+</tspan></tspan><tspan
+         x="1655.623"
+         y="102.09766"
+         id="tspan606"><tspan
+           style="font-size:32px"
+           id="tspan604"> - no retaliation dmg
+</tspan></tspan><tspan
+         x="1655.623"
+         y="142.09766"
+         id="tspan610"><tspan
+           style="font-size:32px"
+           id="tspan608"> - take x less less dmg
+</tspan></tspan><tspan
+         x="1655.623"
+         y="182.09766"
+         id="tspan614"><tspan
+           style="font-size:32px"
+           id="tspan612">
+</tspan></tspan><tspan
+         x="1655.623"
+         y="222.09766"
+         id="tspan618"><tspan
+           style="font-size:32px"
+           id="tspan616">
+</tspan></tspan><tspan
+         x="1655.623"
+         y="262.09766"
+         id="tspan622"><tspan
+           style="font-size:32px"
+           id="tspan620">
+</tspan></tspan><tspan
+         x="1655.623"
+         y="302.09766"
+         id="tspan626"><tspan
+           style="font-size:32px"
+           id="tspan624">Unit post-fight/death:
+</tspan></tspan><tspan
+         x="1655.623"
+         y="342.09766"
+         id="tspan630"><tspan
+           style="font-size:32px"
+           id="tspan628"> - inflict X dmg
+</tspan></tspan><tspan
+         x="1655.623"
+         y="382.09766"
+         id="tspan634"><tspan
+   style="font-size:32px"
+   id="tspan632"> - reduce atk by X</tspan>
+</tspan><tspan
+         x="1655.623"
+         y="415.01953"
+         id="tspan636">
+</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-8.2250979,-32.646347)"
+       id="text1860"
+       style="font-weight:bold;font-size:32px;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans, Bold';text-align:start;white-space:pre;shape-inside:url(#rect1862);display:inline;fill:#000000;fill-rule:evenodd;stroke:none;stroke-width:21.7852;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"><tspan
+         x="829.37695"
+         y="1015.6992"
+         id="tspan638">Minions cannot attack, they are just blockers.
+</tspan><tspan
+         x="829.37695"
+         y="1055.6992"
+         id="tspan640">When a Minions dies you get one grave = soul to be released
+</tspan><tspan
+         x="829.37695"
+         y="1095.6992"
+         id="tspan644">the Minions spot is unusable until used for a spell.<tspan
+   style="fill:#ff0000"
+   id="tspan642"> Goes back in </tspan></tspan><tspan
+         x="829.37695"
+         y="1135.6992"
+         id="tspan648"><tspan
+           style="fill:#ff0000"
+           id="tspan646">deck ?</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,206.33299,-1.6184224)"
+       id="text1866"
+       style="font-weight:bold;font-size:32px;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans, Bold';text-align:start;white-space:pre;shape-inside:url(#rect1868);display:inline;fill:#000000;fill-rule:evenodd;stroke:none;stroke-width:21.7852;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"><tspan
+         x="12.898438"
+         y="1249.918"
+         id="tspan650">Ideas for Soul Release Spell:
+</tspan><tspan
+         x="12.898438"
+         y="1289.918"
+         id="tspan652"> - raise Hero Atk by X
+</tspan><tspan
+         x="12.898438"
+         y="1329.918"
+         id="tspan654"> - raise Hero Health by X
+</tspan><tspan
+         x="12.898438"
+         y="1369.918"
+         id="tspan656"> - does X dmg to every Enemy
+</tspan><tspan
+         x="12.898438"
+         y="1409.918"
+         id="tspan658">
+</tspan><tspan
+         x="12.898438"
+         y="1449.918"
+         id="tspan662"><tspan
+           style="fill:#ff0000"
+           id="tspan660">Goes back in Deck ?</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:8.46667px;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans, Bold';text-align:start;text-anchor:start;fill:#000000;fill-rule:evenodd;stroke:none;stroke-width:5.764;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       x="209.20897"
+       y="280.35251"
+       id="text1874"><tspan
+         sodipodi:role="line"
+         id="tspan1872"
+         style="stroke-width:5.764"
+         x="209.20897"
+         y="280.35251">Hero Augment :</tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:5.764"
+         x="209.20897"
+         y="290.93585"
+         id="tspan1876"> - Minion buff and automatic soul release (after X turn)</tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:5.764"
+         x="209.20897"
+         y="301.5192"
+         id="tspan1878"> - Spell heavy, can sacrify live minion for spell</tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:5.764"
+         x="209.20897"
+         y="312.10251"
+         id="tspan1882"> - Defense/Hero oriented, only 3 minions no retiliation</tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:5.764"
+         x="209.20897"
+         y="322.68585"
+         id="tspan1880"> </tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-8.2250979,-32.646347)"
+       id="text1884"
+       style="font-weight:bold;font-size:32px;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans, Bold';text-align:start;white-space:pre;shape-inside:url(#rect1886);display:inline;fill:#000000;fill-rule:evenodd;stroke:none;stroke-width:21.7852;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"><tspan
+         x="1675.7852"
+         y="474.85742"
+         id="tspan664">Hero take no retaliation </tspan><tspan
+         x="1675.7852"
+         y="514.85742"
+         id="tspan666">if he kills enemy ?</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-8.2250979,-32.646347)"
+       id="text2042"
+       style="font-weight:bold;font-size:32px;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans, Bold';text-align:start;white-space:pre;shape-inside:url(#rect2044);fill:#ff0000;fill-rule:evenodd;stroke:none;stroke-width:21.7852;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"><tspan
+         x="13.130859"
+         y="1226.8496"
+         id="tspan670"><tspan
+   style="fill:#000000"
+   id="tspan668">Hand size = 5</tspan>
+</tspan><tspan
+         x="13.130859"
+         y="1266.8496"
+         id="tspan672">Full draw every turn / draw to 5
+</tspan><tspan
+         x="13.130859"
+         y="1306.8496"
+         id="tspan674">
+</tspan><tspan
+         x="13.130859"
+         y="1346.8496"
+         id="tspan676">Get new card : switch/add ?
+</tspan><tspan
+         x="13.130859"
+         y="1386.8496"
+         id="tspan678">Deck size = ???
+</tspan><tspan
+         x="13.130859"
+         y="1426.8496"
+         id="tspan680">
+</tspan><tspan
+         x="13.130859"
+         y="1466.8496"
+         id="tspan682">
+</tspan><tspan
+         x="13.130859"
+         y="1506.8496"
+         id="tspan684">
+</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-8.2250979,-32.646347)"
+       id="text2048"
+       style="font-weight:bold;font-size:32px;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans, Bold';text-align:start;white-space:pre;shape-inside:url(#rect2050);fill:#ff0000;fill-rule:evenodd;stroke:none;stroke-width:21.7852;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000" />
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:8.46667px;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans, Bold';text-align:start;text-anchor:start;fill:#000000;fill-rule:evenodd;stroke:none;stroke-width:5.764;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       x="-3.4984477"
+       y="356.50125"
+       id="text2058"><tspan
+         sodipodi:role="line"
+         id="tspan2056"
+         style="stroke-width:5.764"
+         x="-3.4984477"
+         y="356.50125">Map :  Slay the spire rogue lite</tspan></text>
+  </g>
+</svg>
