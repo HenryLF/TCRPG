@@ -8,13 +8,14 @@ const SHIELD_img = document.createElement("img");
 SHIELD_img.src = "./assets/shield.png";
 SHIELD_img.className = "effect icons";
 
-
 class Unit {
   name = "unit";
   img = "./assets/placeholder.png";
   className = "unit";
   effectIcon = [];
+  uncleansableEffectIcon = [];
   SHIELD = 0;
+  IMPULSE = 0;
   constructor(HP_MAX, ATK) {
     this.HP_MAX = HP_MAX;
     this.HP = HP_MAX;
@@ -42,18 +43,24 @@ class Unit {
     stat.appendChild(ATK_img.cloneNode());
     p = document.createElement("p");
     p.innerText = ` : ${this.ATK}`;
+    if(this.IMPULSE){
+      p.innerText+=`(+${this.IMPULSE})`
+    }
     stat.appendChild(p);
-    if(this.SHIELD){
+    if (this.SHIELD) {
       stat.appendChild(SHIELD_img.cloneNode());
       p = document.createElement("p");
       p.innerText = ` : ${this.SHIELD}`;
-      stat.appendChild(p)
+      stat.appendChild(p);
     }
 
     div.appendChild(stat);
 
     let effect = document.createElement("div");
     effect.className = "effect-div";
+    this.uncleansableEffectIcon.forEach((element) => {
+      effect.appendChild(element.cloneNode());
+    });
     this.effectIcon.forEach((element) => {
       effect.appendChild(element.cloneNode());
     });
@@ -62,18 +69,29 @@ class Unit {
     return div;
   }
   preAttackEffect = [];
-  takeDamageEffect = [];
+  onDamageEffect = [];
   postAttackEffect = [];
   preAttackedEffect = [];
   postAttackedEffect = [];
   onKillEffect = [];
   onDeathEffect = [];
+  cleanse() {
+    this.preAttackEffect = [];
+    this.onDamageEffect = [];
+    this.postAttackEffect = [];
+    this.preAttackedEffect = [];
+    this.postAttackedEffect = [];
+    this.onKillEffect = [];
+    this.onDeathEffect = [];
+    this.effectIcon = [];
+  }
   takeDamage(atk) {
-    let dmg = Math.max(atk.ATK - this.SHIELD, 0);
+    let dmg = Math.max(atk.ATK + atk.IMPULSE - this.SHIELD, 0);
+    atk.IMPULSE = 0;
     this.SHIELD = Math.max(this.SHIELD - atk.ATK, 0);
-    this.HP = Math.max(this.HP - dmg, 0);
+    this.HP = Math.max(this.HP - dmg);
     if (dmg) {
-      this.takeDamageEffect.map((f) => {
+      this.onDamageEffect.map((f) => {
         f(this, atk);
       });
     }
@@ -84,6 +102,20 @@ class Unit {
       });
     }
   }
+  takeEffectDamage(dmg) {
+    this.HP = this.HP - dmg;
+    if (dmg) {
+      this.onDamageEffect.map((f) => {
+        f(this, effectDamagePlaceholder);
+      });
+    }
+    if (this.HP <= 0) {
+      this.death(effectDamagePlaceholder);
+    }
+  }
+  heal(hl) {
+    this.HP = Math.min(this.HP + hl, this.HP_MAX);
+  }
   death(atk) {
     this.onDeathEffect.map((f) => {
       f(this, atk);
@@ -91,96 +123,7 @@ class Unit {
   }
 }
 
-let MonsterMap = new Map();
-let MonsterID = 0;
-class Monster extends Unit {
-  name = "AHSAMAMA !!"
-  img = "assets/monsters/spider.png";
-  className = "monster unit";
-  constructor(HP_MAX, ATK) {
-    super(HP_MAX, ATK);
-    this.id = MonsterID;
-    MonsterMap.set(MonsterID, this);
-    MonsterID += 1;
-  }
-  attack(target) {
-    normalAttack(this, target);
-  }
-  death() {
-    super.death();
-    MonsterMap.delete(this.id);
-  }
-}
-class Hero extends Unit {
-  img = "assets/player.png";
-  name = "Percival";
-  className = "hero unit";
-  effectIcon = [firstStrikeEffectIcon];
-  attack(target) {
-    firstStrikeAttack(this, target);
-  }
-  death() {
-    super.death();
-    window.alert("GAME OVER");
-  }
-}
-let BlockerMap = new Map();
-let BlockerID = 0;
-class Blocker extends Unit {
-  img = "./assets/cards/minions/ShitGobblin.png";
-  className = "blocker unit";
-  name = "Goblin";
-  constructor(HP_MAX, ATK) {
-    super(HP_MAX, ATK);
-    this.id = BlockerID;
-    BlockerMap.set(BlockerID, this);
-    BlockerID += 1;
-  }
-  death() {
-    super.death();
-    BlockerMap.set(this.id, new BlockerGrave(this.id));
-  }
-}
-
-class BlockerGrave {
-  img = "./assets/gravestone.png";
-  className = "grave unit";
-  constructor(id) {
-    this.id = id;
-  }
-  release() {
-    BlockerMap.delete(this.id);
-  }
-  render() {
-    let div = document.createElement("div");
-    div.className = this.className;
-    let img = document.createElement("img");
-    img.src = this.img;
-    div.appendChild(img);
-    return div;
-  }
-}
-
 // Attacks
-function normalAttack(atk, tgt) {
-  atk.pre_attack.map((f) => f(atk));
-  tgt.HP -= atk.ATK;
-  tgt.takeDamage.map((f) => {
-    f(tgt);
-  });
-  if (tgt.HP <= 0) {
-    tgt.death();
-    atk.kill.map((f) => f(atk));
-  }
-  atk.HP -= atk.ATK;
-  if (atk.HP <= 0) {
-    atk.death();
-  } else {
-    atk.takeDamage.map((f) => f(atk));
-
-    atk.post_attack.map((f) => f(atk));
-  }
-}
 function normalAttack(atk, tgt) {
   atk.preAttackEffect.map((f) => {
     f(atk, tgt);
@@ -197,6 +140,11 @@ function normalAttack(atk, tgt) {
     f(tgt, atk);
   });
 }
+
+const firstStrikeEffectIcon = document.createElement("img");
+firstStrikeEffectIcon.src = "./assets/firstStrike.png";
+firstStrikeEffectIcon.className = "effect icons";
+
 function firstStrikeAttack(atk, tgt) {
   atk.preAttackEffect.map((f) => {
     f(atk, tgt);
@@ -216,16 +164,11 @@ function firstStrikeAttack(atk, tgt) {
   });
 }
 
-//Effect
-
-const armorEffectIcon = document.createElement("img");
-armorEffectIcon.src = "./assets/armor.png";
-armorEffectIcon.className = "effect icons";
-
-const firstStrikeEffectIcon = document.createElement("img");
-firstStrikeEffectIcon.src = "./assets/firstStrike.png";
-firstStrikeEffectIcon.className = "effect icons";
-
-const soulessEffectIcon = document.createElement("img");
-soulessEffectIcon.src = "./assets/souless.png";
-soulessEffectIcon.className = "effect icons";
+function* getAllUnits() {
+  let units = [...MonsterMap.values(), ...BlockerMap.values(), player].filter(
+    (e) => e instanceof Unit
+  );
+  for (let unit of units) {
+    yield unit;
+  }
+}

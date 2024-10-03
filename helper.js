@@ -8,6 +8,9 @@ const turnCounterSpan = document.getElementById("turn-counter");
 const phaseDescriptionP = document.getElementById("phase-description");
 const phaseID = document.getElementById("phase-id");
 
+const cardInDiscard = document.getElementById("n-discard");
+const cardInDeck = document.getElementById("n-deck");
+
 let MonsterUI;
 let BlockerUI;
 let CardUI;
@@ -46,6 +49,9 @@ function render() {
     hand.appendChild(div);
     CardUI.set(id, div);
   });
+
+  cardInDiscard.innerText = DiscardPile.length;
+  cardInDeck.innerText = PlayerDeck.length;
 }
 
 function WaitForUserInput() {
@@ -113,7 +119,6 @@ function WaitForUserSelection(AcceptedResult, SkipHandle, CancelHandle) {
     }
   );
 }
-
 function defaultBlocker() {
   return [...BlockerMap.values()]
     .filter((m) => {

@@ -1,43 +1,21 @@
 let turnCounter = 0;
+let levelCounter = 0;
 
-let PlayerDeck = [
-  new BlockerCard(3, 2),
-  new BlockerCard(3, 2),
-  new BlockerCard(3, 2),
-  new SoulessBotCard(3, 3),
-  new SoulessBotCard(3, 3),
-  new ExplosiveGuyCard(2, 0),
-  new ExplosiveGuyCard(2, 0),
-  new ExplosiveGuyCard(2, 0),
-  new BlockerCard(3, 2),
-  new BlockerCard(3, 2),
-  new SoulShield(),
-  new SoulShield(),
-  new SoulStorm(),
-  new SoulStorm(),
-  new SoulSummon(),
-];
-function shuffleDeck() {
-  for (var i = PlayerDeck.length - 1; i >= 0; i--) {
-    var j = Math.floor(Math.random() * (i + 1));
-    var temp = PlayerDeck[i];
-    PlayerDeck[i] = PlayerDeck[j];
-    PlayerDeck[j] = temp;
-  }
+function initLevel() {
+  turnCounter = 0;
+  Levels[levelCounter]();
 }
 
-shuffleDeck();
-
-let PlayerHand = new Map();
-function PlayerDraw() {
-  for (let i = 0; i < 5; i++) {
-    if (PlayerHand.has(i)) {
-      continue;
-    }
-    card = PlayerDeck.pop();
-    card.handID = i;
-    PlayerHand.set(i, card);
+function initTurn() {
+  turnCounter++;
+  if (!MonsterMap.size) {
+    levelCounter++;
+    initLevel();
   }
+  shuffleDeck();
+  PlayerDraw();
+  turnCounterSpan.innerText = turnCounter;
+  firstPhase();
 }
 
 async function firstPhase() {
@@ -58,19 +36,14 @@ async function firstPhase() {
             firstPhase();
           }
         }, firstPhase);
+      } else {
+        firstPhase();
       }
     },
     (r) => {
       r ? secondPhase() : firstPhase();
     }
-
   );
-}
-function initTurn() {
-  turnCounter++;
-  PlayerDraw();
-  turnCounterSpan.innerText = turnCounter;
-  firstPhase();
 }
 
 function initFirstPhase() {
@@ -100,7 +73,6 @@ async function secondPhase() {
       }
     );
   }
-
   initTurn();
 }
 
@@ -123,11 +95,7 @@ async function resolvePromiseSeq(job_arr) {
 
 player = new Hero(8, 3);
 
-new GeneralArmor(8, 3);
-new Monster(3, 3);
-new GeneralArmor(4, 5);
-
 // HeroAttack
 render();
-
+initLevel();
 initTurn();

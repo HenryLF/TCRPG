@@ -10,16 +10,23 @@
     <div id="field-pannel">
       <div class="field">
         <div id="monsters"></div>
-        <div class="minions unit" id="blocker-0"></div>
-        <div class="minions unit" id="blocker-1"></div>
-        <div class="minions unit" id="blocker-2"></div>
-        <div class="minions unit" id="blocker-3"></div>
-        <div class="minions unit" id="blocker-4"></div>
+        <div class="unit_container" id="blocker-0"></div>
+        <div class="unit_container" id="blocker-1"></div>
+        <div class="unit_container" id="blocker-2"></div>
+        <div class="unit_container" id="blocker-3"></div>
+        <div class="unit_container" id="blocker-4"></div>
         <div id="hero_container"></div>
       </div>
       <div id="pannel">
-        <p>Turn <span id="turn-counter"></span> : <span id="phase-id"></span> phase</p>
+        <p>
+          Turn <span id="turn-counter"></span> :
+          <span id="phase-id"></span> phase
+        </p>
         <p id="phase-description"></p>
+        <div id="deckcontainer">
+          <div id="deck"><span id="n-deck"></span><br> cards in deck</div>
+          <div id="discard"><span id="n-discard"></span><br> cards in grave</div>
+        </div>
         <div id="btns">
           <img id="cancel" class="btn" src="./assets/cancel.svg" />
           <img id="skip" class="btn" src="./assets/skip.svg" />
@@ -28,10 +35,15 @@
     </div>
     <div id="hand"></div>
     <script src="./units.js"></script>
-    <script src="./unit_db.js"></script>
+    <script src="./unit_effect.js"></script>
     <script src="./card.js"></script>
-    <script src="./card_db.js"></script>
+    <script src="./spellcard.js"></script>
+    <script src="./ritualcard.js"></script>
+    <script src="./blocker.js"></script>
+    <script src="./monster.js"></script>
+    <script src="./hero.js"></script>
     <script src="./helper.js"></script>
+    <script src="./levels.js"></script>
     <script src="./gameloop.js"></script>
   </body>
 </html>
