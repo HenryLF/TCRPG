@@ -81,7 +81,7 @@ class SoulSummon extends SpellCard {
     "Release all souls, summon a Soul Guardian with 2HP/2ATK for each soul.";
   resolveHandler() {
     let Soul = SoulRelease();
-    if (Soul && BlockerMap.length < 5) {
+    if (Soul) {
       new SoulGuardian(2 * Soul, 2 * Soul);
       return true;
     }

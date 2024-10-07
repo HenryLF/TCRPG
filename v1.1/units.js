@@ -43,8 +43,8 @@ class Unit {
     stat.appendChild(ATK_img.cloneNode());
     p = document.createElement("p");
     p.innerText = ` : ${this.ATK}`;
-    if(this.IMPULSE){
-      p.innerText+=`(+${this.IMPULSE})`
+    if (this.IMPULSE) {
+      p.innerText += `(+${this.IMPULSE})`;
     }
     stat.appendChild(p);
     if (this.SHIELD) {
@@ -89,7 +89,7 @@ class Unit {
     let dmg = Math.max(atk.ATK + atk.IMPULSE - this.SHIELD, 0);
     atk.IMPULSE = 0;
     this.SHIELD = Math.max(this.SHIELD - atk.ATK, 0);
-    this.HP = Math.max(this.HP - dmg);
+    this.HP = this.HP - dmg;
     if (dmg) {
       this.onDamageEffect.map((f) => {
         f(this, atk);
@@ -100,17 +100,22 @@ class Unit {
       atk.onKillEffect.map((f) => {
         f(atk, this);
       });
+    } else {
+      this.animationDamage();
     }
   }
   takeEffectDamage(dmg) {
-    this.HP = this.HP - dmg;
-    if (dmg) {
-      this.onDamageEffect.map((f) => {
-        f(this, effectDamagePlaceholder);
-      });
-    }
+    this.HP = this.HP + this.SHIELD - dmg;
+    this.SHIELD = Math.max(this.SHIELD - dmg, 0);
+
+    this.onDamageEffect.map((f) => {
+      f(this, effectDamagePlaceholder);
+    });
+
     if (this.HP <= 0) {
       this.death(effectDamagePlaceholder);
+    } else {
+      this.animationDamage();
     }
   }
   heal(hl) {
@@ -120,6 +125,19 @@ class Unit {
     this.onDeathEffect.map((f) => {
       f(this, atk);
     });
+    this.animationDeath();
+  }
+  animationDamage() {
+    this.className += " damaged";
+    setTimeout(() => {
+      this.className = this.className.replace(" damaged", "");
+    }, 1000);
+  }
+  animationDeath() {
+    this.className += " death";
+    setTimeout(() => {
+      this.className = this.className.replace(" death", "");
+    }, 1000);
   }
 }
 

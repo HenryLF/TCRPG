@@ -1,0 +1,94 @@
+.unit:hover{
+  transform: scale(1.2) ;
+  /* animation: none; */
+}
+.card:hover{
+  transform: scale(1.2);
+  translate: 0% -50%;
+}
+
+@keyframes Bounce {
+  25% {
+    translate: 0% 5%;
+  }
+  75% {
+    translate: 0% -5%;
+  }
+  to {
+    translate: 0% 0%;
+  }
+}
+
+.played {
+  animation-name: Discard;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  pointer-events: none;
+}
+
+@keyframes Discard {
+  to {
+    translate: 0% -200%;
+    opacity: 0;
+  }
+}
+
+.damaged {
+  animation-name: takeDamage;
+  animation-duration: 200ms;
+  animation-iteration-count: 4;
+  pointer-events: none;
+}
+
+@keyframes takeDamage {
+  25% {
+    filter: grayscale(0.25);
+    translate: -10%;
+  }
+  75% {
+    translate: 10%;
+    filter: grayscale(0.75);
+  }
+  to {
+    translate: 0%;
+    filter: grayscale(1);
+  }
+}
+
+.monster.attacking{
+  animation-name: waitMonsterAttack;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  pointer-events: none;
+}
+@keyframes waitMonsterAttack {
+  50%{
+    transform: scale(1.5);
+    translate: 0% 25%;
+  }
+}
+.hero.attacking{
+  animation-name: waitHeroAttack;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  pointer-events: none;
+}
+@keyframes waitHeroAttack {
+  50%{
+    transform: scale(1.5);
+    translate: 0% -25%;
+  }
+}
+
+.death{
+  animation-name: Death;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+@keyframes Death {
+  to{
+    transform: scale(0);
+    filter: grayscale(1);
+  }
+}
+

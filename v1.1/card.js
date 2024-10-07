@@ -16,14 +16,17 @@ class BlockerCard extends Card {
       this.img = img;
     }
   }
-  resolveHandler(){
+  resolveHandler() {
     new Blocker(this.HP, this.ATK, this.img);
   }
   resolve() {
     if (BlockerMap.size < 5) {
-      this.resolveHandler()
-      PlayerHand.delete(this.handID)
-      DiscardPile.push(this)
+      this.resolveHandler();
+      this.className += " discard";
+      setTimeout(() => {
+        PlayerHand.delete(this.handID);
+        DiscardPile.push(this);
+      }, 1000);
       return true;
     }
     return false;

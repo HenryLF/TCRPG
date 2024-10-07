@@ -1,101 +1,112 @@
-let turnCounter = 0;
-let levelCounter = 0;
-
-function initLevel() {
-  turnCounter = 0;
-  Levels[levelCounter]();
+function WaitForUserInput() {
+  let Inputs = Array.from(document.querySelectorAll("#input"));
+  return new Promise((resolve, reject) => {
+    for (let input of Inputs) {
+      input.onclick = (e) => {
+        let rtn = e.target;
+        while (rtn.id != "input") {
+          rtn = rtn.parentNode;
+        }
+        resolve(rtn);
+        input.onclick = undefined;
+      };
+      skipButton.onclick = (e) => {
+        reject(true);
+      };
+      cancelButton.onclick = (e) => {
+        reject(false);
+      };
+    }
+  });
 }
 
-function initTurn() {
-  turnCounter++;
-  if (!MonsterMap.size) {
-    levelCounter++;
-    initLevel();
-  }
-  shuffleDeck();
-  PlayerDraw();
-  turnCounterSpan.innerText = turnCounter;
-  firstPhase();
-}
-
-async function firstPhase() {
-  initFirstPhase();
-  WaitForUserInput().then(
-    (Atc) => {
-      if (Atc instanceof Card) {
-        Atc.resolve();
-        firstPhase();
-      } else if (Atc instanceof Hero) {
-        player.className = "hero unit attack";
-        render();
-        WaitForUserInput().then((Tgt) => {
-          if (Tgt instanceof Monster) {
-            player.attack(Tgt);
-            secondPhase();
-          } else {
-            firstPhase();
-          }
-        }, firstPhase);
-      } else {
-        firstPhase();
+function WaitForUserSelection() {
+  return WaitForUserInput().then(
+    (userInput) => {
+      let valid = Array.from(arguments)
+        .map((e) => Array.from(userInput.classList).includes(e))
+        .includes(true);
+      if (valid) {
+        return userInput;
       }
+      return WaitForUserSelection(arguments);
     },
     (r) => {
-      r ? secondPhase() : firstPhase();
+      return r;
     }
   );
 }
 
-function initFirstPhase() {
-  player.className = "hero unit";
-  hand.style.pointerEvents = "auto";
-  monster_div.pointerEvents = "auto";
-  BlockerUI.forEach((e) => {
-    e.className = "blocker unit";
-  });
-  phaseID.innerText = "player";
-  phaseDescriptionP.innerHTML = Phase1;
-  render();
+async function initTurn() {
+  await playerDraw();
+  playerPhase();
 }
 
-async function secondPhase() {
-  initSecondPhase();
-  BlockerUI.forEach((e) => {
-    e.className = "blocker unit waiting";
+function initPlayerPhase() {
+  phaseID.innerText = "player";
+  return new Promise((resolve) => {
+    setTimeout(() => {}, 100);
+    resolve();
   });
-  for ([id, monster] of [...MonsterMap.entries()]) {
-    MonsterUI.get(id).className = "monster unit attack";
-    await WaitForUserSelection([Blocker, Hero], defaultBlocker).then(
-      (blocker) => {
-        monster.attack(blocker);
-        MonsterUI.get(id).className = "monster unit";
-        render();
+}
+async function playerPhase() {
+  await initPlayerPhase();
+  let userAction = await WaitForUserSelection("card", "hero");
+  if (userAction === true) {
+    enemyPhase();
+    return;
+  } else if (userAction.object instanceof Card) {
+    await userAction.object.resolveHandle();
+    playerPhase();
+    return;
+  } else {
+    player.div.className = player.className + " attacking";
+    let userTarget = await WaitForUserSelection("monster");
+    player.div.className = player.className;
+    if (userTarget === true || userTarget == false) {
+      playerPhase();
+      return;
+    }
+    await player.attack(userTarget.object);
+    enemyPhase();
+    return;
+  }
+}
+
+function initEnemyPhase() {
+  phaseID.innerText = "enemy";
+  return new Promise((resolve) => {
+    setTimeout(() => {}, 1000);
+    resolve();
+  });
+}
+async function enemyPhase() {
+  await initEnemyPhase();
+  for (monster of monstersOnFieldIterator()) {
+    console.log(monster);
+    monster.className = monster.object.className + " attacking";
+    let userBlocker = await WaitForUserSelection("blocker", "hero").then(
+      (userBlocker) => {
+        if (userBlocker === true || userBlocker === false) {
+          return defaultBlocker();
+        }
+        return userBlocker;
       }
     );
+    monster.className = monster.object.className;
+    await monster.object.attack(userBlocker.object);
   }
   initTurn();
+  return;
 }
 
-function initSecondPhase() {
-  hand.style.pointerEvents = "none";
-  monster_div.pointerEvents = "none";
-  player.className = "hero unit";
-  phaseID.innerText = "enemy";
-  phaseDescriptionP.innerHTML = Phase2;
-  render();
+let player = new Hero(8, 3, 2);
+hero_div.appendChild(player.div);
+
+for (let i = 0; i < 2; i++) {
+  let m = new Monster(3, 5, 0);
+  monster_div.appendChild(m.div);
 }
 
-async function resolvePromiseSeq(job_arr) {
-  let rtn = [];
-  for (job of job_arr) {
-    rtn.push(await job());
-  }
-  return rtn;
-}
-
-player = new Hero(8, 3);
-
-// HeroAttack
-render();
-initLevel();
+playerDraw();
 initTurn();

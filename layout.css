@@ -1,0 +1,130 @@
+
+.overlay{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  display: none;
+  flex-wrap: wrap;
+  justify-content:space-around ;
+}
+.overlay .card{
+  width: 20%;
+  height: 20%;
+
+  margin-left: 2%;
+  margin-right: 2%;
+}
+.overlay .card:hover{
+  transform: scale(1.2);
+}
+
+#field-pannel {
+  height: 80vh;
+  width: 100%;
+  display: flex;
+}
+.field {
+  background-color: green;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  width: 75%;
+}
+#monster-container {
+  grid-area: 1 / 1 / 4 / 13;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: first baseline;
+  width: 100%;
+}
+.monster.unit{
+  width: 18%;
+}
+#blocker-1 {
+  grid-area: 5 / 3 / 7 / 5;
+}
+#blocker-0 {
+  grid-area: 5 / 6 / 7 / 8;
+}
+#blocker-2 {
+  grid-area: 5 / 9 / 7 / 11;
+}
+#blocker-3 {
+  grid-area: 8 / 1 / 10 / 3;
+}
+#blocker-4 {
+  grid-area: 8 / 11 / 10 / 13;
+}
+.blocker-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+#hero-container {
+  grid-area: 8 / 5 / 11 / 9;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#pannel {
+  width: 25%;
+  height: 100%;
+  background-color: yellow;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+#deck-container {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: space-around;
+}
+#deck-container div {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: antiquewhite;
+  font-size: 200%;
+  text-align: center;
+}
+#deck {
+  background-color: maroon;
+}
+#discard {
+  background-color: rgb(40, 153, 159);
+}
+
+#button-container {
+  display: flex;
+  height: 20%;
+}
+.btn {
+  width: 50%;
+}
+.btn:hover {
+  animation-name: Bounce;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+}
+
+#hand {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: 20vh;
+}
+
+
+
+

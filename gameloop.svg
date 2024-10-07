@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="266.793mm"
+   height="215.32761mm"
+   viewBox="0 0 266.79299 215.32761"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   sodipodi:docname="gameloop.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="1.0682573"
+     inkscape:cx="1484.193"
+     inkscape:cy="414.6941"
+     inkscape:window-width="1920"
+     inkscape:window-height="1011"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:page
+       x="0"
+       y="0"
+       width="266.793"
+       height="215.32761"
+       id="page755" />
+    <inkscape:page
+       x="276.793"
+       y="0"
+       width="266.793"
+       height="215.32761"
+       id="page757" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2">
+    <marker
+       style="overflow:visible"
+       id="TriangleStart"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="TriangleStart"
+       markerWidth="5.3244081"
+       markerHeight="6.155385"
+       viewBox="0 0 5.3244081 6.1553851"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="TriangleStart-5"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="TriangleStart"
+       markerWidth="5.3244081"
+       markerHeight="6.155385"
+       viewBox="0 0 5.3244081 6.1553851"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135-6" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="TriangleStart-2"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="TriangleStart"
+       markerWidth="5.3244081"
+       markerHeight="6.155385"
+       viewBox="0 0 5.3244081 6.1553851"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135-9" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="TriangleStart-27"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="TriangleStart"
+       markerWidth="5.3244081"
+       markerHeight="6.155385"
+       viewBox="0 0 5.3244081 6.1553851"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135-0" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="TriangleStart-3"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="TriangleStart"
+       markerWidth="5.3244081"
+       markerHeight="6.155385"
+       viewBox="0 0 5.3244081 6.1553851"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135-60" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="TriangleStart-26"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="TriangleStart"
+       markerWidth="5.3244081"
+       markerHeight="6.155385"
+       viewBox="0 0 5.3244081 6.1553851"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135-1" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="TriangleStart-26-7"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="TriangleStart"
+       markerWidth="5.3244081"
+       markerHeight="6.155385"
+       viewBox="0 0 5.3244081 6.1553851"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135-1-9" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="TriangleStart-26-7-5"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="TriangleStart"
+       markerWidth="5.3244081"
+       markerHeight="6.155385"
+       viewBox="0 0 5.3244081 6.1553851"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135-1-9-9" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="TriangleStart-26-2"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="TriangleStart"
+       markerWidth="5.3244081"
+       markerHeight="6.155385"
+       viewBox="0 0 5.3244081 6.1553851"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135-1-2" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="TriangleStart-26-2-7"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="TriangleStart"
+       markerWidth="5.3244081"
+       markerHeight="6.155385"
+       viewBox="0 0 5.3244081 6.1553851"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135-1-2-3" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="TriangleStart-3-6"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="TriangleStart"
+       markerWidth="5.3244081"
+       markerHeight="6.155385"
+       viewBox="0 0 5.3244081 6.1553851"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135-60-2" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="TriangleStart-3-6-1"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="TriangleStart"
+       markerWidth="5.3244081"
+       markerHeight="6.155385"
+       viewBox="0 0 5.3244081 6.1553851"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135-60-2-2" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="TriangleStart-3-6-1-0"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="TriangleStart"
+       markerWidth="5.3244081"
+       markerHeight="6.155385"
+       viewBox="0 0 5.3244081 6.1553851"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135-60-2-2-9" />
+    </marker>
+  </defs>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-6.2229751,-5.9586527)">
+    <g
+       id="g1554"
+       transform="translate(-18.60765,-21.163566)">
+      <rect
+         style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:1.064;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+         id="rect234"
+         width="105.05589"
+         height="27.234953"
+         x="-130.41852"
+         y="27.654219"
+         transform="scale(-1,1)" />
+      <text
+         xml:space="preserve"
+         style="font-size:27.4305px;font-family:'TeX Gyre Chorus';-inkscape-font-specification:'TeX Gyre Chorus, Normal';fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.551548;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+         x="42.739395"
+         y="48.197445"
+         id="text290"
+         transform="scale(1.0174118,0.98288616)"><tspan
+           sodipodi:role="line"
+           id="tspan288"
+           style="fill:#ffffff;stroke-width:0.551548"
+           x="42.739395"
+           y="48.197445">phase 1</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:10.5833px;font-family:'TeX Gyre Chorus';-inkscape-font-specification:'TeX Gyre Chorus, Normal';fill:#ffffff;fill-rule:evenodd;stroke:#000000;stroke-width:1.064;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       x="75.908585"
+       y="48.699722"
+       id="text504"><tspan
+         sodipodi:role="line"
+         id="tspan502"
+         style="font-size:10.5833px;fill:#000000;stroke:none;stroke-width:1.064"
+         x="75.908585"
+         y="48.699722">user input :</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.064;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#TriangleStart-26);stop-color:#000000"
+       d="m 102.59983,51.347398 5.54568,14.262586"
+       id="path1670-8"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.064;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#TriangleStart-26-7);stop-color:#000000"
+       d="m 93.350251,51.176668 -5.54568,14.262586"
+       id="path1670-8-2"
+       sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-size:10.5833px;font-family:'TeX Gyre Chorus';-inkscape-font-specification:'TeX Gyre Chorus, Normal';fill:#000000;fill-rule:evenodd;stroke:none;stroke-width:1.064;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       x="67.948311"
+       y="78.198845"
+       id="text558"><tspan
+         sodipodi:role="line"
+         id="tspan556"
+         style="stroke-width:1.064"
+         x="67.948311"
+         y="78.198845">HERO / CARD /Skip</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#1a1a1a;stroke-width:1.064;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#TriangleStart);stop-color:#000000"
+       d="m 112.82205,83.417128 v 16.501319 h 61.88253 V 84.44549"
+       id="path614"
+       sodipodi:nodetypes="cccc" />
+    <text
+       xml:space="preserve"
+       style="font-size:10.5833px;font-family:'TeX Gyre Chorus';-inkscape-font-specification:'TeX Gyre Chorus, Normal';fill:#000000;fill-rule:evenodd;stroke:none;stroke-width:1.064;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       x="160.56178"
+       y="79.569305"
+       id="text1545"><tspan
+         sodipodi:role="line"
+         id="tspan1543"
+         style="fill:#000000;stroke:none;stroke-width:1.064"
+         x="160.56178"
+         y="79.569305">resolve ?</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:6.20805px;font-family:'TeX Gyre Chorus';-inkscape-font-specification:'TeX Gyre Chorus, Normal';fill:#000000;fill-rule:evenodd;stroke:none;stroke-width:0.624131;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       x="146.23396"
+       y="88.036919"
+       id="text1549"
+       transform="scale(0.94503559,1.0581612)"><tspan
+         sodipodi:role="line"
+         id="tspan1547"
+         style="stroke-width:0.624131"
+         x="146.23396"
+         y="88.036919">then</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:6.20805px;font-family:'TeX Gyre Chorus';-inkscape-font-specification:'TeX Gyre Chorus, Normal';fill:#000000;fill-rule:evenodd;stroke:none;stroke-width:0.624131;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       x="165.96585"
+       y="57.239826"
+       id="text1549-6"
+       transform="scale(0.94503559,1.0581612)"><tspan
+         sodipodi:role="line"
+         id="tspan1547-7"
+         style="stroke-width:0.624131"
+         x="165.96585"
+         y="57.239826">then</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:6.20805px;font-family:'TeX Gyre Chorus';-inkscape-font-specification:'TeX Gyre Chorus, Normal';fill:#000000;fill-rule:evenodd;stroke:none;stroke-width:0.624131;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       x="201.56866"
+       y="40.045681"
+       id="text1549-5"
+       transform="scale(0.94503559,1.0581612)"><tspan
+         sodipodi:role="line"
+         id="tspan1547-3"
+         style="stroke-width:0.624131"
+         x="201.56866"
+         y="40.045681">then</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:10.5833px;font-family:'TeX Gyre Chorus';-inkscape-font-specification:'TeX Gyre Chorus, Normal';fill:#000000;fill-rule:evenodd;stroke:none;stroke-width:1.064;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       x="155.17915"
+       y="51.589615"
+       id="text1558"><tspan
+         sodipodi:role="line"
+         id="tspan1556"
+         style="stroke-width:1.064"
+         x="155.17915"
+         y="51.589615">animation</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:10.5833px;font-family:'TeX Gyre Chorus';-inkscape-font-specification:'TeX Gyre Chorus, Normal';fill:#000000;fill-rule:evenodd;stroke:none;stroke-width:1.064;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       x="172.95068"
+       y="33.15353"
+       id="text1562"><tspan
+         sodipodi:role="line"
+         id="tspan1560"
+         style="stroke-width:1.064"
+         x="172.95068"
+         y="33.15353">effect</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.064;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#TriangleStart);stop-color:#000000"
+       d="m 173.50569,21.401277 v -8.324039 h -52.7451"
+       id="path1564" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.064;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#TriangleStart-5);stop-color:#000000"
+       d="M 169.70639,72.989657 V 55.631546"
+       id="path1670"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.064;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#TriangleStart-2);stop-color:#000000"
+       d="M 182.01217,73.41958 V 56.061469"
+       id="path1670-1"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.064;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#TriangleStart-27);stop-color:#000000"
+       d="M 181.91293,46.527005 V 37.106394"
+       id="path1670-9"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.064;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#TriangleStart-3);stop-color:#000000"
+       d="M 169.58893,44.782883 122.32432,20.039652"
+       id="path1670-6"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.064;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#TriangleStart-3-6);stop-color:#000000"
+       d="m 367.43298,67.792376 -0.61029,32.418034"
+       id="path1670-6-9"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.064;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#TriangleStart-27);stop-color:#000000"
+       d="M 80.731264,83.053242 V 94.369976"
+       id="path2382" />
+    <text
+       xml:space="preserve"
+       style="font-size:10.5833px;font-family:'TeX Gyre Chorus';-inkscape-font-specification:'TeX Gyre Chorus, Normal';fill:#ffffff;fill-rule:evenodd;stroke:#000000;stroke-width:1.064;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       x="59.244427"
+       y="107.27879"
+       id="text504-0"><tspan
+         sodipodi:role="line"
+         id="tspan502-2"
+         style="font-size:10.5833px;fill:#000000;stroke:none;stroke-width:1.064"
+         x="59.244427"
+         y="107.27879">user input :</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:10.5833px;font-family:'TeX Gyre Chorus';-inkscape-font-specification:'TeX Gyre Chorus, Normal';fill:#ffffff;fill-rule:evenodd;stroke:#000000;stroke-width:1.064;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       x="44.492138"
+       y="134.5804"
+       id="text504-0-3"><tspan
+         sodipodi:role="line"
+         id="tspan502-2-7"
+         style="font-size:10.5833px;fill:#000000;stroke:none;stroke-width:1.064"
+         x="44.492138"
+         y="134.5804">Cancel/Enemy/Skip</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.064;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#TriangleStart-26-2);stop-color:#000000"
+       d="m 81.731836,109.18838 5.54568,14.26258"
+       id="path1670-8-8"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.064;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#TriangleStart-26-2-7);stop-color:#000000"
+       d="m 97.699106,109.0769 5.545684,14.26258"
+       id="path1670-8-8-6"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.064;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#TriangleStart-26-7-5);stop-color:#000000"
+       d="m 72.482257,109.01765 -5.54568,14.26258"
+       id="path1670-8-2-9"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.064;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#TriangleStart-3);stop-color:#000000"
+       d="M 41.694965,137.04404 H 20.549495 V 41.144462"
+       id="path3119" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.064;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#TriangleStart-26-7);stop-color:#000000"
+       d="m 87.643982,138.44787 v 20.49725 h 21.618568"
+       id="path3247" />
+    <text
+       xml:space="preserve"
+       style="font-size:10.5833px;font-family:'TeX Gyre Chorus';-inkscape-font-specification:'TeX Gyre Chorus, Normal';fill:#000000;fill-rule:evenodd;stroke:none;stroke-width:1.064;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       x="114.74963"
+       y="162.10759"
+       id="text1545-3"><tspan
+         sodipodi:role="line"
+         id="tspan1543-1"
+         style="fill:#000000;stroke:none;stroke-width:1.064"
+         x="114.74963"
+         y="162.10759">animation</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.064;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#TriangleStart-26);stop-color:#000000"
+       d="m 157.93312,159.48014 h 16.20644"
+       id="path3408" />
+    <text
+       xml:space="preserve"
+       style="font-size:10.5833px;font-family:'TeX Gyre Chorus';-inkscape-font-specification:'TeX Gyre Chorus, Normal';fill:#000000;fill-rule:evenodd;stroke:none;stroke-width:1.064;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       x="179.1049"
+       y="162.04858"
+       id="text1562-9"><tspan
+         sodipodi:role="line"
+         id="tspan1560-4"
+         style="stroke-width:1.064"
+         x="179.1049"
+         y="162.04858">effect</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.064;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#TriangleStart-26);stop-color:#000000"
+       d="m 126.659,132.09146 h 100.19814 v 55.66552"
+       id="path3569" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.064;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#TriangleStart-26-7);stop-color:#000000"
+       d="m 150.40025,81.173406 71.06023,98.832044"
+       id="path3697" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.064;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#TriangleStart-26-7);stop-color:#000000"
+       d="m 186.93171,166.4335 17.5377,16.23255"
+       id="path3825" />
+    <g
+       id="g1554-7"
+       transform="translate(142.06545,165.86509)">
+      <rect
+         style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:1.064;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+         id="rect234-8"
+         width="105.05589"
+         height="27.234953"
+         x="-130.41852"
+         y="27.654219"
+         transform="scale(-1,1)" />
+      <text
+         xml:space="preserve"
+         style="font-size:27.4305px;font-family:'TeX Gyre Chorus';-inkscape-font-specification:'TeX Gyre Chorus, Normal';fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.551548;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+         x="42.739395"
+         y="48.197445"
+         id="text290-4"
+         transform="scale(1.0174118,0.98288616)"><tspan
+           sodipodi:role="line"
+           id="tspan288-5"
+           style="fill:#ffffff;stroke-width:0.551548"
+           x="42.739395"
+           y="48.197445">phase 2</tspan></text>
+    </g>
+    <g
+       id="g1554-7-3"
+       transform="translate(258.18536,-21.163566)">
+      <rect
+         style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:1.064;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+         id="rect234-8-6"
+         width="105.05589"
+         height="27.234953"
+         x="-130.41852"
+         y="27.654219"
+         transform="scale(-1,1)" />
+      <text
+         xml:space="preserve"
+         style="font-size:27.4305px;font-family:'TeX Gyre Chorus';-inkscape-font-specification:'TeX Gyre Chorus, Normal';fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.551548;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+         x="42.739395"
+         y="48.197445"
+         id="text290-4-7"
+         transform="scale(1.0174118,0.98288616)"><tspan
+           sodipodi:role="line"
+           id="tspan288-5-5"
+           style="fill:#ffffff;stroke-width:0.551548"
+           x="42.739395"
+           y="48.197445">phase 2</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:10.5833px;font-family:'TeX Gyre Chorus';-inkscape-font-specification:'TeX Gyre Chorus, Normal';fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:1.064;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       x="285.12335"
+       y="53.821335"
+       id="text966"><tspan
+         sodipodi:role="line"
+         id="tspan964"
+         style="font-size:10.5833px;stroke:none;stroke-width:1.064"
+         x="285.12335"
+         y="53.821335">for each monster</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:10.5833px;font-family:'TeX Gyre Chorus';-inkscape-font-specification:'TeX Gyre Chorus, Normal';fill:#ffffff;fill-rule:evenodd;stroke:#000000;stroke-width:1.064;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       x="308.74771"
+       y="65.217026"
+       id="text504-3"><tspan
+         sodipodi:role="line"
+         id="tspan502-5"
+         style="font-size:10.5833px;fill:#000000;stroke:none;stroke-width:1.064"
+         x="308.74771"
+         y="65.217026">user input : Block / SKIP</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:10.5833px;font-family:'TeX Gyre Chorus';-inkscape-font-specification:'TeX Gyre Chorus, Normal';fill:#000000;fill-rule:evenodd;stroke:none;stroke-width:1.064;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       x="311.80771"
+       y="41.224644"
+       id="text1053"><tspan
+         sodipodi:role="line"
+         id="tspan1051"
+         style="stroke-width:1.064"
+         x="311.80771"
+         y="41.224644">blocker animation</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:10.5833px;font-family:'TeX Gyre Chorus';-inkscape-font-specification:'TeX Gyre Chorus, Normal';fill:#000000;fill-rule:evenodd;stroke:none;stroke-width:1.064;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       x="330.87207"
+       y="112.64285"
+       id="text1057"><tspan
+         sodipodi:role="line"
+         id="tspan1055"
+         style="stroke-width:1.064"
+         x="330.87207"
+         y="112.64285">monster atack blocker</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.064;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#TriangleStart-3-6-1);stop-color:#000000"
+       d="m 391.57157,67.032411 -0.0811,10.722201"
+       id="path1670-6-9-7"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.064;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#TriangleStart-3-6-1-0);stop-color:#000000"
+       d="m 392.82349,88.261218 -0.0811,10.722205"
+       id="path1670-6-9-7-3"
+       sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-size:10.5833px;font-family:'TeX Gyre Chorus';-inkscape-font-specification:'TeX Gyre Chorus, Normal';fill:#000000;fill-rule:evenodd;stroke:none;stroke-width:1.064;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       x="370.80914"
+       y="87.122391"
+       id="text1738"><tspan
+         sodipodi:role="line"
+         id="tspan1736"
+         style="stroke-width:1.064"
+         x="370.80914"
+         y="87.122391">default blocker</tspan></text>
+  </g>
+</svg>

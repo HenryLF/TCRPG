@@ -13,28 +13,28 @@ class Hero extends Unit {
 }
 
 let PlayerDeck = [
+  //   new BlockerCard(3, 2),
+  //   new BlockerCard(3, 2),
+  //   new BlockerCard(3, 2),
+  //   new WindRitual(),
+  // ];
+  //  [
   new BlockerCard(3, 2),
   new BlockerCard(3, 2),
   new BlockerCard(3, 2),
-  new WindRitual(),
+  new SoulessBotCard(3, 3),
+  new SoulessBotCard(3, 3),
+  new ExplosiveGuyCard(2, 0),
+  new ExplosiveGuyCard(2, 0),
+  new ExplosiveGuyCard(2, 0),
+  new BlockerCard(3, 2),
+  new BlockerCard(3, 2),
+  new SoulShield(),
+  new SoulShield(),
+  new SoulStorm(),
+  new SoulStorm(),
+  new SoulSummon(),
 ];
-//  [
-//   new BlockerCard(3, 2),
-//   new BlockerCard(3, 2),
-//   new BlockerCard(3, 2),
-//   new SoulessBotCard(3, 3),
-//   new SoulessBotCard(3, 3),
-//   new ExplosiveGuyCard(2, 0),
-//   new ExplosiveGuyCard(2, 0),
-//   new ExplosiveGuyCard(2, 0),
-//   new BlockerCard(3, 2),
-//   new BlockerCard(3, 2),
-//   new SoulShield(),
-//   new SoulShield(),
-//   new SoulStorm(),
-//   new SoulStorm(),
-//   new SoulSummon(),
-// ];
 
 let DiscardPile = new Array();
 

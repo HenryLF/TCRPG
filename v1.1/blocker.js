@@ -74,7 +74,7 @@ class ExplosiveGuyCard extends BlockerCard {
 class ExplosiveGuy extends Blocker {
   name = "ExplosiveGuy";
   img = "assets/cards/minions/bomb-with-skull-outline.png";
-  onDeathEffect = [monsterAOEEffect(1)];
+  onDeathEffect = [monsterAOEEffect(2)];
 }
 
 class SoulGuardian extends Blocker {

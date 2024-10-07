@@ -1,0 +1,46 @@
+.card,
+.unit,
+.grave {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  transition-property: transform translate;
+  transition-duration: 0.5s;
+  font-weight: bold;
+}
+.card {
+  height: 100%;
+  width: 18%;
+  background-color: red;
+}
+.unit,
+.grave {
+  height: 100%;
+  width: 100%;
+}
+.Name {
+  margin: 0;
+  pointer-events: none;
+}
+.IMG {
+  height: 60%;
+  pointer-events: none;
+}
+.Stat {
+  height: 10%;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+.Icons {
+  height: 100%;
+  transition-property: transform;
+  transition-duration: 500ms;
+  pointer-events: auto;
+}
+.Icons:hover {
+  transform: scale(1.5);
+}

@@ -51,7 +51,11 @@ function render() {
   });
 
   cardInDiscard.innerText = DiscardPile.length;
+  let rect = cardInDiscard.getBoundingClientRect()
+  document.body.style.setProperty("--discard-top",rect.top)
+  document.body.style.setProperty("--discard-left",rect.left)
   cardInDeck.innerText = PlayerDeck.length;
+
 }
 
 function WaitForUserInput() {
