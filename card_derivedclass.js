@@ -7,6 +7,7 @@ class BlockerCard extends Card {
   HP_UI = new Object();
   ATK_UI = new Object();
   SHIELD_UI = new Object();
+  LVL_UI = new Object();
   constructor(lvl) {
     super(lvl);
   }
@@ -20,7 +21,7 @@ class BlockerCard extends Card {
     return this.LVL * this.BlockerClass.levelScaling[2];
   }
   levelUp() {
-    this.LVL += 1;
+    super.levelUp();
     this.HP_UI.innerText = this.HP;
     this.ATK_UI.innerText = this.ATK;
     if (this.SHIELD) {
@@ -73,7 +74,12 @@ class BlockerCard extends Card {
   resolve() {
     let slot = emptyBlockerSlot();
     if (slot) {
-      let blocker = new this.BlockerClass(this.HP, this.ATK, this.SHIELD);
+      let blocker = new this.BlockerClass(
+        this.HP,
+        this.ATK,
+        this.SHIELD,
+        this.LVL
+      );
       slot.appendChild(blocker.div);
       return true;
     }
@@ -102,11 +108,13 @@ class SpellCard extends Card {
   async resolve() {
     let graveCount = graveOnField();
     if (graveCount) {
-      await this.spellEffect(graveCount);
-      for (let grave of gravesOnFieldIterator()) {
-        grave.parentNode.removeChild(grave);
+      let res = await this.spellEffect(graveCount);
+      if (res) {
+        for (let grave of gravesOnFieldIterator()) {
+          grave.parentNode.removeChild(grave);
+        }
+        return true;
       }
-      return true;
     }
     return false;
   }

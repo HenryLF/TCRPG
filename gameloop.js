@@ -47,6 +47,7 @@ function initLevel() {
   levelCountSpan.innerText = levelCounter;
   LevelGenerator(levelCounter);
   turnCounter = 0;
+  initDeck();
 }
 async function initTurn() {
   if (monsterOnField() == 0) {
@@ -112,4 +113,9 @@ async function enemyPhase() {
   }
   initTurn();
   return;
+}
+
+function gameOver() {
+  window.alert("GAME OVER");
+  window.location.reload();
 }

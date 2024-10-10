@@ -1,6 +1,5 @@
 .card,
-.unit,
-.grave {
+.unit {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -41,6 +40,11 @@
 .grave {
   height: 100%;
   width: 100%;
+}
+.grave{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .NameLevel {
   max-width: 100%;

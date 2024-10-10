@@ -40,15 +40,16 @@ const dialog8 = [
 const dialog9 = [
   "This is a Soul spell, it will consume the souls of you deseased blocker.",
   "The more soul the better the spell.",
-  "Ho ! And also, because you're limited to 5 blockers, it allows you to clear your field)",
-  "Anyway, let's use it, click the spell !",
+  "Ho ! And also, because you're limited to 5 blockers, it allows you to clear your field.",
+  "There is another type of spell, you will discover soon.",
+  "Anyway, let's use this one, click the spell !",
 ];
 const dialog10 = [
   "Ok this fucker is soften enough, let finish him.",
   "See the icon underneath your character ?",
   "It means you have FIRST STRIKE, you can hover on it to see what it means.",
   "You will not take damage back if you kill the monster.",
-  "Don't hesitate to cherck what the different icon means.",
+  "Don't hesitate to check what the different icon means.",
   "Ok let's kill this bloke and move to the real game.",
 ];
 

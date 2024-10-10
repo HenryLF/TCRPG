@@ -2,7 +2,7 @@ class Unit {
   img = "./assets/placeholder.png";
   name = "unit";
   className = "unit";
-  preDamageEffect=[]
+  preDamageEffect = [];
   onDamageEffect = [];
   onDeathEffect = [];
   effectIcons = [];
@@ -10,15 +10,16 @@ class Unit {
   ATK_UI = new Object();
   SHIELD_UI = new Object();
 
-  constructor(HP_MAX, ATK, SHIELD = 0) {
+  constructor(HP_MAX, ATK, SHIELD = 0, LVL = 1) {
     this.HP_MAX = HP_MAX;
     this._HP = HP_MAX;
     this._ATK = ATK;
     this._SHIELD = SHIELD;
+    this.LVL = LVL;
   }
   set HP(hp) {
     this._HP = Math.min(hp, this.HP_MAX);
-    this._HP = Math.max(this._HP,0)
+    this._HP = Math.max(this._HP, 0);
     if (hp == 0) {
       this.death();
     }
@@ -35,7 +36,7 @@ class Unit {
     return this._ATK;
   }
   set SHIELD(x) {
-    this._SHIELD = Math.max(x,0);
+    this._SHIELD = Math.max(x, 0);
     this.SHIELD_UI.innerText = `: ${this._SHIELD}`;
   }
   get SHIELD() {
@@ -57,7 +58,7 @@ class Unit {
     let img = document.createElement("img");
     img.className = "IMG";
     img.src = this.img;
-    imgdiv.appendChild(img)
+    imgdiv.appendChild(img);
     div.appendChild(imgdiv);
 
     let stat = document.createElement("div");
@@ -83,10 +84,10 @@ class Unit {
     let icons = document.createElement("div");
     icons.className = "EffectIcons";
     for (let icon of this.effectIcons) {
-      let clone = createEffectIcon(icon)
+      let clone = createEffectIcon(icon);
       icons.appendChild(clone);
     }
-    div.appendChild(icons)
+    div.appendChild(icons);
 
     return div;
   }
@@ -101,10 +102,10 @@ class Unit {
   async takeDamage(attacker) {
     return new Promise(async (r) => {
       let reduce_dmg = attacker.ATK - this.SHIELD;
-      this.SHIELD = this.SHIELD- attacker.ATK
-      console.log(reduce_dmg)
-      for (let effect of this.preDamageEffect){
-        reduce_dmg = effect(reduce_dmg)
+      this.SHIELD = this.SHIELD - attacker.ATK;
+      console.log(reduce_dmg);
+      for (let effect of this.preDamageEffect) {
+        reduce_dmg = effect(reduce_dmg);
       }
       if (reduce_dmg > 0) {
         this.HP = Math.max(this.HP - reduce_dmg, 0);
@@ -115,6 +116,11 @@ class Unit {
       }
       r();
     });
+  }
+  async heal(hl) {
+    this.HP += hl;
+    await this.healAnimation();
+    return
   }
 
   async death() {
@@ -135,6 +141,16 @@ class Unit {
       }, 1000);
     });
   }
+  healAnimation() {
+    return new Promise((r) => {
+      this.div.className += " healed";
+      setTimeout(() => {
+        this.div.className = this.className;
+        r(arguments);
+      }, 1000);
+    });
+  }
+
   deathAnimation() {
     return new Promise((r) => {
       this.div.className += " death";
@@ -145,8 +161,7 @@ class Unit {
     });
   }
 
-  async action() {
-  }
+  async action() {}
 }
 
 class BlockerGrave {
@@ -169,5 +184,3 @@ class BlockerGrave {
     return this._div;
   }
 }
-
-

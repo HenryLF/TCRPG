@@ -61,4 +61,7 @@ class Card {
   async resolve() {
     return true;
   }
+  levelUp() {
+    this.LVL += 1;
+  }
 }

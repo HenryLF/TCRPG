@@ -1,11 +1,11 @@
 .unit:hover {
   transform: scale(1.2);
-  z-index:99;
+  z-index: 99;
   /* animation: none; */
 }
 #hand .card:hover {
   transform: scale(1.2);
-  z-index:99;
+  z-index: 99;
 }
 
 .validInput {
@@ -74,6 +74,30 @@
   to {
     translate: 0%;
     filter: grayscale(1);
+  }
+}
+.healed {
+  animation-name: takeHeal;
+  animation-duration: 500ms;
+  animation-iteration-count: 2;
+  pointer-events: none;
+}
+@keyframes takeHeal {
+  25% {
+    transform: scale(0.9);
+    filter: brightness(1.2);
+  }
+  50% {
+    filter: brightness(1);
+  }
+
+  75% {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+  }
+  to {
+    transform: scale(1);
+    filter: brightness(1);
   }
 }
 

@@ -27,6 +27,10 @@ class Hero extends Unit {
     return true;
   }
   effectIcons = [firstStrikeEffectIcon];
+  death(){
+    super.death()
+    gameOver();
+  }
 }
 
 class Monster extends Unit {

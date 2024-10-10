@@ -1,30 +1,29 @@
 const CardsInDeck = [
   new BlockerCard(1),
   new BlockerCard(1),
-  new SpikyBlockerCard(1),
-  new ArmoredBlockerCard(1),
-  new SpikyBlockerCard(1),
-  new SpikyBlockerCard(1),
-  new FireRitual(1),
-  new FireRitual(1),
-  new FireRitual(1),
-  new FireRitual(1),
-  new FireRitual(1),
+  new BlockerCard(1),
+  new BlockerCard(1),
+  new BlockerCard(1),
   new SoulStorm(1),
   new SoulStorm(1),
-  new SoulStorm(1),
-  new SoulStorm(1),
+  new SoulSummon(1),
+  new FireRitual(1),
+  new FireRitual(1),
 ];
 
 function initDeck() {
+  hand_div.innerHTML = ""
+  playerDeck.innerHTML = ""
+  playerDiscard.innerHTML = ""
   for (let card of CardsInDeck) {
     playerDeck.append(card.div);
   }
-
   cardsInDiscardSpan.innerText = playerDiscard.childElementCount;
   cardsInDeckSpan.innerText = playerDeck.childElementCount;
 }
-initDeck();
+
+
+
 function playerDraw() {
   return new Promise((r) => {
     while (cardInHand() < 5) {
@@ -47,9 +46,10 @@ function playerDraw() {
   });
 }
 function resetDeck() {
-  cardsInDiscardSpan.innerText = playerDiscard.childElementCount;
-  cardsInDeckSpan.innerText = playerDeck.childElementCount;
   for (let card of playerDiscard.children) {
+    console.log(card)
     playerDeck.appendChild(card);
   }
+  cardsInDiscardSpan.innerText = playerDiscard.childElementCount;
+  cardsInDeckSpan.innerText = playerDeck.childElementCount;
 }
