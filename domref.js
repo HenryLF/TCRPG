@@ -95,7 +95,7 @@ function graveOnField() {
 const HP_img = document.createElement("img");
 HP_img.src = "./assets/heart.png";
 HP_img.className = "Icons";
-HP_img.txt = "HP : I've heard it stands for Health Point"
+HP_img.txt = "HP : I've heard it stands for Health Point";
 
 const ATK_img = document.createElement("img");
 ATK_img.src = "./assets/sword.png";
@@ -118,6 +118,17 @@ firstStrikeEffectIcon.className = "Icons";
 firstStrikeEffectIcon.txt =
   "FIRST STRIKE: Will not take damage if the target die";
 
+const spikyEffectIcon = document.createElement("img");
+spikyEffectIcon.src = "./assets/cactus.png";
+spikyEffectIcon.className = "Icons";
+spikyEffectIcon.txt =
+  "Spiky: Attacking this guy will for sure result in damage.";
+
+const explosiveEffectIcon = document.createElement("img");
+explosiveEffectIcon.src = "./assets/explosive.png";
+explosiveEffectIcon.className = "Icons";
+explosiveEffectIcon.txt =
+  "Explosive: On death will inflict damage to every enemy.";
 
 const iconTooltip = document.createElement("div");
 iconTooltip.id = "tooltip";

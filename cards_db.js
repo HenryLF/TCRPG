@@ -8,24 +8,28 @@ class ArmoredBlocker extends Blocker {
   name = "Armored Blocker";
   preDamageEffect = [armorPreDamageEffect(2)];
   effectIcons = [armorEffectIcon, armorEffectIcon];
-  static levelScaling = [1,2,1]
+  static levelScaling = [1, 2, 1];
 }
 
 class SpikyBlockerCard extends BlockerCard {
   name = "Spiky Blocker";
   BlockerClass = SpikyBlocker;
+
+  effectIcons = [spikyEffectIcon, spikyEffectIcon];
 }
 class SpikyBlocker extends Blocker {
   name = "Spiky Blocker";
-  onDamageEffect = [retaliateOnDamageEffect(1)];
-  static levelScaling = [2,1,1]
+  onDamageEffect = [retaliateOnDamageEffect(2)];
+  static levelScaling = [2, 1, 1];
+
+  effectIcons = [spikyEffectIcon, spikyEffectIcon];
 }
 
 //Spell
 
 class SoulStorm extends SoulSpellCard {
   name = "Soul Storm";
-  get spellDescription(){
+  get spellDescription() {
     return `Release all Souls from dead blocker. Inflict damage ${this.LVL} to every monster.`;
   }
   async spellEffect(soul) {
@@ -38,11 +42,14 @@ class SoulStorm extends SoulSpellCard {
 //Ritual
 class FireRitual extends RitualCard {
   name = "Fire Ritual";
-  get spellDescription(){
-    return `Sacrifice a live blocker to inflict ${this.LVL*3} damage to every monster.`;}
-  async spellEffect(sacrifice) {
+  get spellDescription() {
+    return `Sacrifice a live blocker to inflict ${
+      this.LVL * 3
+    } damage to every monster.`;
+  }
+  async spellEffect() {
     for (let monster of monstersOnFieldIterator()) {
-      monster.object.takeDamage({ ATK: this.LVL*3 });
+      monster.object.takeDamage({ ATK: this.LVL * 3 });
     }
   }
 }

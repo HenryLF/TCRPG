@@ -18,24 +18,25 @@ class Unit {
   }
   set HP(hp) {
     this._HP = Math.min(hp, this.HP_MAX);
+    this._HP = Math.max(this._HP,0)
     if (hp == 0) {
       this.death();
     }
-    this.HP_UI.innerText = `: ${hp}`;
+    this.HP_UI.innerText = `: ${this._HP}`;
   }
   get HP() {
     return this._HP;
   }
   set ATK(x) {
-    this.ATK = x;
-    this.ATK_UI.innerText = `: ${x}`;
+    this._ATK = x;
+    this.ATK_UI.innerText = `: ${this._ATK}`;
   }
   get ATK() {
     return this._ATK;
   }
   set SHIELD(x) {
-    this._SHIELD = x;
-    this.SHIELD_UI.innerText = `: ${x}`;
+    this._SHIELD = Math.max(x,0);
+    this.SHIELD_UI.innerText = `: ${this._SHIELD}`;
   }
   get SHIELD() {
     return this._SHIELD;
@@ -97,7 +98,8 @@ class Unit {
   async takeDamage(attacker) {
     return new Promise(async (r) => {
       let reduce_dmg = attacker.ATK - this.SHIELD;
-      this.SHIELD = Math.max(this.SHIELD - attacker.ATK, 0);
+      this.SHIELD = this.SHIELD- attacker.ATK
+      console.log(reduce_dmg)
       for (let effect of this.preDamageEffect){
         reduce_dmg = effect(reduce_dmg)
       }
@@ -111,6 +113,7 @@ class Unit {
       r();
     });
   }
+
   async death() {
     for (effect of this.onDeathEffect) {
       await effect(this);

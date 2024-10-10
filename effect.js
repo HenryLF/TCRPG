@@ -5,11 +5,23 @@ function armorPreDamageEffect(ARMOR) {
 function retaliateOnDamageEffect(DMG) {
   return (obj, attacker) => {
     return new Promise((r) => {
-      attacker.HP -= DMG;
+      attacker.HP -= DMG-attacker.SHIELD;
+      attacker.SHIELD -=DMG 
       r();
     });
   };
 }
+
+function explodeOnDeathEffect(DMG) {
+  return (obj) => {
+    return new Promise((r) => {
+      for (let monster of monstersOnFieldIterator()) {
+        monster.takeDamage({ ATK: DMG });
+      }
+    });
+  };
+}
+
 //Attacks
 
 async function normalAttack(atk, tgt) {
