@@ -9,30 +9,42 @@
     <title>TCRPG</title>
   </head>
   <body>
-    <div id="deck-div" class="overlay">
+    <div id="deck-overlay" class="overlay">
+      <div id="deck-div" ></div>
+      <img id="deck-overlay-cancel" class="overlay-cancel" src="./assets/no.png" />
     </div>
-    <div id="discard-div" class="overlay"></div>
+    <div id="discard-overlay" class="overlay">
+      <div id="discard-div"></div>
+      <img id="discard-overlay-cancel" class="overlay-cancel" src="./assets/no.png" />
+    </div>
     <div id="field-pannel">
       <div class="field">
-        <div id="monster-container">
-        </div>
+        <div id="monster-container"></div>
         <div class="blocker-container" id="blocker-0"></div>
         <div class="blocker-container" id="blocker-1"></div>
         <div class="blocker-container" id="blocker-2"></div>
         <div class="blocker-container" id="blocker-3"></div>
         <div class="blocker-container" id="blocker-4"></div>
-        <div id="hero-container">
-        </div>
+        <div id="hero-container"></div>
       </div>
       <div id="pannel">
-        <p>
+        <p id="level-p">
+          Level <span id="level-counter"></span>
+        </p>
+        <p id="turn-p">
           Turn <span id="turn-counter"></span> :
           <span id="phase-id"></span> phase
         </p>
         <p id="phase-description"></p>
         <div id="deck-container">
-          <div id="deck"><span id="n-deck"></span><br> cards in deck</div>
-          <div id="discard"><span id="n-discard"></span><br> cards in grave</div>
+          <div id="deck-btn">
+            <span id="n-deck"></span><br />
+            cards in deck
+          </div>
+          <div id="discard-btn">
+            <span id="n-discard"></span><br />
+            cards in grave
+          </div>
         </div>
         <div id="button-container">
           <img id="input" class="btn cancel" src="./assets/cancel.svg" />
@@ -40,15 +52,16 @@
         </div>
       </div>
     </div>
-    <div id="hand">
-
-    </div>
+    <div id="hand"></div>
     <script src="./domref.js"></script>
     <script src="./card_baseclass.js"></script>
     <script src="./card_derivedclass.js"></script>
     <script src="./unit_baseclass.js"></script>
     <script src="./unit_derivedclass.js"></script>
+    <script src="./effect.js"></script>
+    <script src="./cards_db.js"></script>
     <script src="./deck.js"></script>
+    <script src="./level.js"></script>
     <script src="./gameloop.js"></script>
   </body>
 </html>

@@ -1,20 +1,19 @@
 const CardsInDeck = [
-  new BlockerCard(3, 3, 2),
-  new BlockerCard(3, 3, 2),
-  new BlockerCard(3, 3, 2),
-  new BlockerCard(3, 3, 2),
-  new BlockerCard(3, 3, 2),
-  new BlockerCard(3, 3, 2),
-  //   new BlockerCard(3, 3, 2),
-  //   new BlockerCard(3, 3, 2),
-  //   new BlockerCard(3, 3, 2),
-  //   new BlockerCard(3, 3, 2),
-  //   new BlockerCard(3, 3, 2),
-  //   new BlockerCard(3, 3, 2),
-  //   new BlockerCard(3, 3, 2),
-  //   new BlockerCard(3, 3, 2),
-  //   new BlockerCard(3, 3, 2),
-  //   new BlockerCard(3, 3, 2),
+  new BlockerCard(1),
+  new BlockerCard(1),
+  new SpikyBlockerCard(1),
+  new ArmoredBlockerCard(1),
+  new SpikyBlockerCard(1),
+  new SpikyBlockerCard(1),
+  new FireRitual(1),
+  new FireRitual(1),
+  new FireRitual(1),
+  new FireRitual(1),
+  new FireRitual(1),
+  new SoulStorm(1),
+  new SoulStorm(1),
+  new SoulStorm(1),
+  new SoulStorm(1),
 ];
 
 function initDeck() {
@@ -22,8 +21,8 @@ function initDeck() {
     playerDeck.append(card.div);
   }
 
-  cardsInDiscard.innerText = playerDiscard.childElementCount;
-  cardsInDeck.innerText = playerDeck.childElementCount;
+  cardsInDiscardSpan.innerText = playerDiscard.childElementCount;
+  cardsInDeckSpan.innerText = playerDeck.childElementCount;
 }
 initDeck();
 function playerDraw() {
@@ -39,15 +38,18 @@ function playerDraw() {
       }
       let i = Math.floor(Math.random() * playerDeck.childElementCount);
       let card = playerDeck.children[i];
-      playerDeck.removeChild(card);
+      // playerDeck.removeChild(card);
       hand_div.appendChild(card);
     }
-    cardsInDiscard.innerText = playerDiscard.childElementCount;
-    cardsInDeck.innerText = playerDeck.childElementCount;
+    cardsInDiscardSpan.innerText = playerDiscard.childElementCount;
+    cardsInDeckSpan.innerText = playerDeck.childElementCount;
     r();
   });
 }
 function resetDeck() {
-  cardsInDiscard.innerText = playerDiscard.childElementCount;
-  cardsInDeck.innerText = playerDeck.childElementCount;
+  cardsInDiscardSpan.innerText = playerDiscard.childElementCount;
+  cardsInDeckSpan.innerText = playerDeck.childElementCount;
+  for (let card of playerDiscard.children) {
+    playerDeck.appendChild(card);
+  }
 }

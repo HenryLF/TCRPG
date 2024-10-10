@@ -2,11 +2,14 @@ class Unit {
   img = "./assets/placeholder.png";
   name = "unit";
   className = "unit";
+  preDamageEffect=[]
   onDamageEffect = [];
   onDeathEffect = [];
+  effectIcons = [];
   HP_UI = new Object();
   ATK_UI = new Object();
   SHIELD_UI = new Object();
+
   constructor(HP_MAX, ATK, SHIELD = 0) {
     this.HP_MAX = HP_MAX;
     this._HP = HP_MAX;
@@ -14,7 +17,7 @@ class Unit {
     this._SHIELD = SHIELD;
   }
   set HP(hp) {
-    this._HP = hp;
+    this._HP = Math.min(hp, this.HP_MAX);
     if (hp == 0) {
       this.death();
     }
@@ -55,23 +58,32 @@ class Unit {
 
     let stat = document.createElement("div");
     stat.className = "Stat";
-    stat.appendChild(HP_img.cloneNode());
+    stat.appendChild(createEffectIcon(HP_img));
     p = document.createElement("p");
     p.innerText = `: ${this.HP}`;
     this.HP_UI = p;
     stat.appendChild(p);
-    stat.appendChild(ATK_img.cloneNode());
+    stat.appendChild(createEffectIcon(ATK_img));
     p = document.createElement("p");
     p.innerText = `: ${this.ATK}`;
     this.ATK_UI = p;
     stat.appendChild(p);
-    stat.appendChild(SHIELD_img.cloneNode());
+    stat.appendChild(createEffectIcon(SHIELD_img));
     p = document.createElement("p");
     p.innerText = `: ${this.SHIELD}`;
     stat.appendChild(p);
     this.SHIELD_UI = p;
 
     div.appendChild(stat);
+
+    let icons = document.createElement("div");
+    icons.className = "EffectIcons";
+    for (let icon of this.effectIcons) {
+      let clone = createEffectIcon(icon)
+      icons.appendChild(clone);
+    }
+    div.appendChild(icons)
+
     return div;
   }
   get div() {
@@ -81,23 +93,18 @@ class Unit {
     this._div = this.render();
     return this._div;
   }
-  takeDamageAnimation() {
-    return new Promise((r) => {
-      this.div.className += " damaged";
-      setTimeout(() => {
-        this.div.className = this.className;
-        r(arguments);
-      }, 1000);
-    });
-  }
+
   async takeDamage(attacker) {
     return new Promise(async (r) => {
       let reduce_dmg = attacker.ATK - this.SHIELD;
       this.SHIELD = Math.max(this.SHIELD - attacker.ATK, 0);
+      for (let effect of this.preDamageEffect){
+        reduce_dmg = effect(reduce_dmg)
+      }
       if (reduce_dmg > 0) {
         this.HP = Math.max(this.HP - reduce_dmg, 0);
         await this.takeDamageAnimation();
-        for (effect of this.onDamageEffect) {
+        for (let effect of this.onDamageEffect) {
           await effect(this, attacker);
         }
       }
@@ -113,7 +120,15 @@ class Unit {
     parent.removeChild(this.div);
     return parent;
   }
-
+  takeDamageAnimation() {
+    return new Promise((r) => {
+      this.div.className += " damaged";
+      setTimeout(() => {
+        this.div.className = this.className;
+        r(arguments);
+      }, 1000);
+    });
+  }
   deathAnimation() {
     return new Promise((r) => {
       this.div.className += " death";
@@ -124,8 +139,7 @@ class Unit {
     });
   }
 
-  async attack(target) {
-    await normalAttack(this, target);
+  async action() {
   }
 }
 
@@ -133,7 +147,7 @@ class BlockerGrave {
   render() {
     let div = document.createElement("div");
     div.className = "grave";
-    div.object = this
+    div.object = this;
 
     let img = document.createElement("img");
     img.className = "IMG";
@@ -150,21 +164,4 @@ class BlockerGrave {
   }
 }
 
-function normalAttack(atk, tgt) {
-  return new Promise(async (r) => {
-    await tgt.takeDamage(atk);
-    await atk.takeDamage(tgt);
-    r();
-  });
-}
-function firstStrikeAttack(atk, tgt) {
-  return new Promise(async (r) => {
-    await tgt.takeDamage(atk);
-    console.log(tgt, tgt.HP, tgt.HP <= 0);
-    if (tgt.HP <= 0) {
-    } else {
-      await atk.takeDamage(tgt);
-    }
-    r();
-  });
-}
+

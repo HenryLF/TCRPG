@@ -11,23 +11,64 @@
 }
 .card {
   height: 100%;
-  width: 18%;
+  width: 15%;
+  border-radius: 20px;
+  border : 10px solid brown;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.blocker.card{
   background-color: red;
+  background-image: url("./assets/backgroundBlocker.png");
+}
+.soulspell.card{
+  background-color:  rgb(128, 164, 164);
+  border-color:  rgb(85, 143, 143);
+  background-image: url("./assets/backgroundSoulspell.png");
+}
+.ritual.card{
+  background-color: rgb(176, 63, 176);
+  border-color: purple;
+  background-image: url("./assets/backgroundRitual.png");
 }
 .unit,
 .grave {
   height: 100%;
   width: 100%;
 }
+.NameLevel{
+  width: 100%;
+  display: flex;
+  justify-content:  space-around;
+}
 .Name {
   margin: 0;
   pointer-events: none;
+  height: 10%;
+  font-size: 80%;
+  text-justify: inter-word;
+  text-align: center;
+}
+.Level{
+  align-self: flex-start;
+  border: 1px solid black;
+  width: 20%;
+  text-align: center;
+  border-radius:100% ;
+  background-color: inherit;
+  color: black;
+}
+.SpellDescription{
+  font-size: 60%;
+  text-justify: inter-word;
+  text-align: center;
 }
 .IMG {
-  height: 60%;
+  height: 50%;
   pointer-events: none;
 }
-.Stat {
+.Stat,.EffectIcons {
   height: 10%;
   max-width: 100%;
   display: flex;

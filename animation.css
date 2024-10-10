@@ -1,12 +1,30 @@
-.unit:hover{
-  transform: scale(1.2) ;
+.unit:hover {
+  transform: scale(1.2);
+  z-index:99;
   /* animation: none; */
 }
-.card:hover{
+#hand .card:hover {
   transform: scale(1.2);
-  translate: 0% -50%;
+  z-index:99;
 }
 
+.validInput {
+  animation-name: Blink;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+@keyframes Blink {
+  from {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.2);
+    transform: scale(1.2);
+  }
+  to {
+    filter: brightness(1);
+  }
+}
 @keyframes Bounce {
   25% {
     translate: 0% 5%;
@@ -33,6 +51,10 @@
   }
 }
 
+.select {
+  translate: 0% -50%;
+}
+
 .damaged {
   animation-name: takeDamage;
   animation-duration: 200ms;
@@ -55,40 +77,39 @@
   }
 }
 
-.monster.attacking{
+.monster.attacking {
   animation-name: waitMonsterAttack;
   animation-duration: 1.5s;
   animation-iteration-count: infinite;
   pointer-events: none;
 }
 @keyframes waitMonsterAttack {
-  50%{
+  50% {
     transform: scale(1.5);
     translate: 0% 25%;
   }
 }
-.hero.attacking{
+.hero.attacking {
   animation-name: waitHeroAttack;
   animation-duration: 2s;
   animation-iteration-count: infinite;
   pointer-events: none;
 }
 @keyframes waitHeroAttack {
-  50%{
+  50% {
     transform: scale(1.5);
     translate: 0% -25%;
   }
 }
 
-.death{
+.death {
   animation-name: Death;
   animation-duration: 2s;
   animation-iteration-count: infinite;
 }
 @keyframes Death {
-  to{
+  to {
     transform: scale(0);
     filter: grayscale(1);
   }
 }
-

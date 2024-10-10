@@ -1,6 +1,8 @@
 class Blocker extends Unit {
   className = "blocker unit";
   img = "./assets/cards/minions/ShitGobblin.png";
+  name = "ShitGobblin";
+  static levelScaling = [1, 1, 1];
   async death() {
     let parent = await super.death();
     console.log(parent);
@@ -13,13 +15,32 @@ class Hero extends Unit {
   className = "hero unit";
   name = "Percival";
   img = "./assets/scrap/fire emblem/14096.png";
-  async attack(target) {
-    await firstStrikeAttack(this, target);
+  async action() {
+    this.div.className = this.className + " attacking";
+    let tgt = await WaitForUserSelection(".monster");
+    this.div.className = this.className;
+    if (tgt === false || tgt === true) {
+      return false;
+    } else {
+      await firstStrikeAttack(this, tgt.object);
+    }
+    return true;
   }
+  effectIcons = [firstStrikeEffectIcon];
 }
 
 class Monster extends Unit {
   className = "monster unit";
   name = "Monster";
   img = "./assets/monsters/spider.png";
+  async action() {
+    this.div.className = this.className + " attacking";
+    let tgt = await WaitForUserSelection(".blocker.unit, .hero").then((t) =>
+      t === true || t === false ? defaultBlocker() : t
+    );
+    console.log(tgt);
+    this.div.className = this.className;
+    await normalAttack(this, tgt.object);
+    return true;
+  }
 }

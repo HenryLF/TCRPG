@@ -1,63 +1,162 @@
 class BlockerCard extends Card {
   className = "blocker card";
   BlockerClass = Blocker;
+  effectIcons = [];
+  name = "ShitGobblin";
   img = "./assets/cards/minions/ShitGobblin.png";
-  constructor(HP, ATK, SHIELD = 0) {
-    super();
-    this.HP = HP;
-    this.ATK = ATK;
-    this.SHIELD = SHIELD;
+  HP_UI = new Object();
+  ATK_UI = new Object();
+  SHIELD_UI = new Object();
+  constructor(lvl) {
+    super(lvl);
+  }
+  get HP() {
+    return this.LVL * this.BlockerClass.levelScaling[0];
+  }
+  get ATK() {
+    return this.LVL * this.BlockerClass.levelScaling[1];
+  }
+  get SHIELD() {
+    return this.LVL * this.BlockerClass.levelScaling[2];
+  }
+  levelUp() {
+    this.LVL += 1;
+    this.HP_UI.innerText = this.HP;
+    this.ATK_UI.innerText = this.ATK;
+    if (this.SHIELD) {
+      this.SHIELD_UI.innerText = this.SHIELD;
+    }
+    this.LVL_UI.innerText = this.LVL;
   }
   render() {
     let div = super.render();
+
+    let img = document.createElement("img");
+    img.className = "IMG";
+    img.src = this.img;
+    div.appendChild(img);
+
     let stat = document.createElement("div");
     stat.className = "Stat";
-    stat.appendChild(HP_img.cloneNode());
+    stat.appendChild(createEffectIcon(HP_img));
     let p = document.createElement("p");
     p.innerText = `: ${this.HP}`;
+    this.HP_UI = p;
     stat.appendChild(p);
-    stat.appendChild(ATK_img.cloneNode());
+    stat.appendChild(createEffectIcon(ATK_img));
     p = document.createElement("p");
     p.innerText = `: ${this.ATK}`;
+    this.ATK_UI = p;
     stat.appendChild(p);
     if (this.SHIELD) {
-      stat.appendChild(SHIELD_img.cloneNode());
+      stat.appendChild(createEffectIcon(SHIELD_img));
       p = document.createElement("p");
       p.innerText = `: ${this.SHIELD}`;
+
+      this.SHIELD_UI = p;
       stat.appendChild(p);
     }
 
     div.appendChild(stat);
+
+    let icons = document.createElement("div");
+    icons.className = "EffectIcons";
+    for (let icon of this.effectIcons) {
+      icons.appendChild(createEffectIcon(icon));
+    }
+    div.appendChild(icons);
     return div;
   }
   resolve() {
-    if (blockerOnField() < 5) {
+    let slot = emptyBlockerSlot();
+    if (slot) {
       let blocker = new this.BlockerClass(this.HP, this.ATK, this.SHIELD);
-      for (let slot of blocker_div) {
-        if (slot.childElementCount == 0) {
-          slot.appendChild(blocker.div);
-          return true;
-        }
-      }
+      slot.appendChild(blocker.div);
+      return true;
     }
     return false;
   }
 }
 
-class SoulSpellCard extends Card {
-  constructor(STRENGHT = 1) {
-    super();
-    this.STRENGHT = STRENGHT;
+class SpellCard extends Card {
+  className = "spell card";
+  get spellDescription() {
+    return "A spell with an effect";
+  }
+  constructor(LVL) {
+    super(LVL);
+  }
+  render() {
+    let div = super.render();
+
+    let p = document.createElement("p");
+    p.className = "SpellDescription";
+    p.innerText = this.spellDescription;
+    div.append(p);
+
+    return div;
   }
   async resolve() {
     let graveCount = graveOnField();
-    if(graveCount){
-        await this.spellEffect(graveCount)
-        return true
+    if (graveCount) {
+      await this.spellEffect(graveCount);
+      for (let grave of gravesOnFieldIterator()) {
+        grave.parentNode.removeChild(grave);
+      }
+      return true;
     }
-    return false
+    return false;
   }
-  async spellEffect(){
-    
+  async spellEffect() {}
+}
+
+class SoulSpellCard extends SpellCard {
+  className = "soulspell card";
+  async resolve() {
+    let graveCount = graveOnField();
+    if (graveCount) {
+      await this.spellEffect(graveCount);
+      for (let grave of gravesOnFieldIterator()) {
+        grave.parentNode.removeChild(grave);
+      }
+      return true;
+    }
+    return false;
   }
+  async spellEffect() {}
+}
+
+class RitualCard extends SpellCard {
+  className = "ritual card";
+  async resolveHandle() {
+    return new Promise(async (r) => {
+      this.div.className = this.className + " select";
+      let res = await this.resolve();
+      if (res) {
+        this.div.className = this.className + " played";
+        setTimeout(() => {
+          hand_div.removeChild(this.div);
+          this.div.className = this.className;
+          r();
+        }, 1000);
+      } else {
+        this.div.className = this.className;
+        r();
+      }
+    });
+  }
+  async resolve() {
+    if (blockerOnField()) {
+      let sacrifice = await WaitForUserSelection(".blocker.unit");
+      if (sacrifice === false || sacrifice === true || sacrifice == undefined) {
+        return false;
+      }
+      await this.spellEffect(sacrifice.object);
+      sacrifice.object.death();
+      return true;
+    }
+    return false;
+  }
+
+  async spellEffect(sacrifice) {}
 }

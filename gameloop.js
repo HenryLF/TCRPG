@@ -1,5 +1,7 @@
 function WaitForUserInput() {
-  let Inputs = Array.from(document.querySelectorAll("#input"));
+  let Inputs = Array.from(
+    document.querySelectorAll(".field #input, #hand #input")
+  );
   return new Promise((resolve, reject) => {
     for (let input of Inputs) {
       input.onclick = (e) => {
@@ -20,30 +22,43 @@ function WaitForUserInput() {
   });
 }
 
-function WaitForUserSelection() {
-  return WaitForUserInput().then(
-    (userInput) => {
-      let valid = Array.from(arguments)
-        .map((e) => Array.from(userInput.classList).includes(e))
-        .includes(true);
-      if (valid) {
-        return userInput;
-      }
-      return WaitForUserSelection(arguments);
-    },
-    (r) => {
-      return r;
-    }
-  );
+async function WaitForUserSelection(cssSelector) {
+  let validInput = document.querySelectorAll(cssSelector);
+  for (let input of validInput) {
+    input.className += " validInput";
+  }
+  let userInput = await WaitForUserInput().catch((r) => r);
+  for (let input of validInput) {
+    input.className = input.object.className;
+  }
+  if(userInput === true || userInput === false){
+    return userInput
+  }
+  else if (userInput.matches(cssSelector)) {
+    return userInput;
+  }
 }
 
+function initLevel() {
+  levelCountSpan.innerText = levelCounter
+  LevelGenerator(levelCounter)
+}
+
+let turnCounter = 0;
+let levelCounter = 0;
 async function initTurn() {
+  turnCounter++;
+  turnCountSpan.innerText = turnCounter;
+  if (monsterOnField() == 0) {
+    levelCounter++;
+    initLevel();
+  }
   await playerDraw();
   playerPhase();
 }
 
 function initPlayerPhase() {
-  phaseID.innerText = "player";
+  phaseIDSpan.innerText = "player";
   return new Promise((resolve) => {
     setTimeout(() => {}, 100);
     resolve();
@@ -51,30 +66,38 @@ function initPlayerPhase() {
 }
 async function playerPhase() {
   await initPlayerPhase();
-  let userAction = await WaitForUserSelection("card", "hero");
-  if (userAction === true) {
-    enemyPhase();
-    return;
-  } else if (userAction.object instanceof Card) {
+  let userAction = await WaitForUserSelection(".card, .hero");
+  //Play a card
+  if (userAction.object instanceof Card) {
     await userAction.object.resolveHandle();
     playerPhase();
     return;
-  } else {
-    player.div.className = player.className + " attacking";
-    let userTarget = await WaitForUserSelection("monster");
-    player.div.className = player.className;
-    if (userTarget === true || userTarget == false) {
+  }
+  //Hero Action
+  else if (userAction.object instanceof Hero) {
+    let action = await player.action();
+    if (action) {
+      enemyPhase();
+      return;
+    } else {
       playerPhase();
       return;
     }
-    await player.attack(userTarget.object);
+  }
+  //SkipButton
+  else if (userAction === true) {
     enemyPhase();
+    return;
+  }
+  //Wrong Input/Cancel
+  else {
+    playerPhase();
     return;
   }
 }
 
 function initEnemyPhase() {
-  phaseID.innerText = "enemy";
+  phaseIDSpan.innerText = "enemy";
   return new Promise((resolve) => {
     setTimeout(() => {}, 1000);
     resolve();
@@ -83,18 +106,7 @@ function initEnemyPhase() {
 async function enemyPhase() {
   await initEnemyPhase();
   for (monster of monstersOnFieldIterator()) {
-    console.log(monster);
-    monster.className = monster.object.className + " attacking";
-    let userBlocker = await WaitForUserSelection("blocker", "hero").then(
-      (userBlocker) => {
-        if (userBlocker === true || userBlocker === false) {
-          return defaultBlocker();
-        }
-        return userBlocker;
-      }
-    );
-    monster.className = monster.object.className;
-    await monster.object.attack(userBlocker.object);
+    await monster.object.action();
   }
   initTurn();
   return;
@@ -103,10 +115,7 @@ async function enemyPhase() {
 let player = new Hero(8, 3, 2);
 hero_div.appendChild(player.div);
 
-for (let i = 0; i < 2; i++) {
-  let m = new Monster(3, 5, 0);
-  monster_div.appendChild(m.div);
-}
+
 
 playerDraw();
 initTurn();
