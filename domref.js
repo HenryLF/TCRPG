@@ -147,3 +147,15 @@ function createEffectIcon(node) {
   });
   return clone;
 }
+
+const dialogDiv = document.getElementById("dialog-div");
+function createDialog(Text) {
+  return new Promise((r) => {
+    dialogDiv.innerText = Text;
+    dialogDiv.style.display = "flex";
+    window.addEventListener("click", (e) => {
+      dialogDiv.style.display = "none";
+      r();
+    },{once:true});
+  });
+}

@@ -31,10 +31,13 @@ class BlockerCard extends Card {
   render() {
     let div = super.render();
 
+    let imgdiv = document.createElement("div");
+    imgdiv.className = "divIMG";
     let img = document.createElement("img");
     img.className = "IMG";
     img.src = this.img;
-    div.appendChild(img);
+    imgdiv.appendChild(img);
+    div.appendChild(imgdiv);
 
     let stat = document.createElement("div");
     stat.className = "Stat";

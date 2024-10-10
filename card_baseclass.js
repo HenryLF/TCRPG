@@ -4,10 +4,10 @@ class Card {
   name = "Card";
   type = "placeholder";
   img = "./assets/cards/placeholder.png";
-  desc = 'A playable card.'
+  desc = "A playable card.";
   className = "card";
-  constructor(lvl){
-    this.LVL = lvl
+  constructor(lvl) {
+    this.LVL = lvl;
   }
   render() {
     let div = document.createElement("div");
@@ -15,21 +15,21 @@ class Card {
     div.className = this.className;
     div.id = "input";
 
-    let sub_div = document.createElement('div')
-sub_div.className = 'NameLevel'
+    let sub_div = document.createElement("div");
+    sub_div.className = "NameLevel";
 
-    let lvl = document.createElement('div')
-    lvl.className = "Level"
-    lvl.innerText = this.LVL
-    this.LVL_UI = lvl
-    sub_div.appendChild(lvl)
+    let lvl = document.createElement("div");
+    lvl.className = "Level";
+    lvl.innerText = this.LVL;
+    this.LVL_UI = lvl;
+    sub_div.appendChild(lvl);
 
     let p = document.createElement("p");
     p.className = "Name";
     p.innerText = this.name;
     sub_div.appendChild(p);
 
-    div.appendChild(sub_div)
+    div.appendChild(sub_div);
     return div;
   }
 

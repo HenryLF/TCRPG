@@ -8,26 +8,31 @@
   transition-property: transform translate;
   transition-duration: 0.5s;
   font-weight: bold;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: repeat(8, 12.5%);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
 }
 .card {
   height: 100%;
   width: 15%;
   border-radius: 20px;
-  border : 10px solid brown;
+  border: 10px solid brown;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
-.blocker.card{
+.blocker.card {
   background-color: red;
   background-image: url("./assets/backgroundBlocker.png");
 }
-.soulspell.card{
-  background-color:  rgb(128, 164, 164);
-  border-color:  rgb(85, 143, 143);
+.soulspell.card {
+  background-color: rgb(128, 164, 164);
+  border-color: rgb(85, 143, 143);
   background-image: url("./assets/backgroundSoulspell.png");
 }
-.ritual.card{
+.ritual.card {
   background-color: rgb(176, 63, 176);
   border-color: purple;
   background-image: url("./assets/backgroundRitual.png");
@@ -37,10 +42,12 @@
   height: 100%;
   width: 100%;
 }
-.NameLevel{
-  width: 100%;
+.NameLevel {
+  max-width: 100%;
   display: flex;
-  justify-content:  space-around;
+  justify-content: space-around;
+  align-items: end;
+  grid-area: 1 / 1 / 2 / 2;
 }
 .Name {
   margin: 0;
@@ -50,26 +57,45 @@
   text-justify: inter-word;
   text-align: center;
 }
-.Level{
-  align-self: flex-start;
+.Level {
+  place-self: start;
   border: 1px solid black;
   width: 20%;
   text-align: center;
-  border-radius:100% ;
+  border-radius: 100%;
   background-color: inherit;
   color: black;
 }
-.SpellDescription{
+.SpellDescription {
   font-size: 60%;
   text-justify: inter-word;
   text-align: center;
+  grid-area: 3 / 1 / 9 / 2;
 }
 .IMG {
-  height: 50%;
+  height: 100%;
+  object-fit: cover;
   pointer-events: none;
 }
-.Stat,.EffectIcons {
-  height: 10%;
+.divIMG {
+  grid-area: 3 / 1 / 7 / 2;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+.CardIMG > img {
+  height: 100%;
+}
+
+.Stat {
+  grid-area: 7 / 1 / 8 / 2;
+}
+.EffectIcons {
+  grid-area: 8 / 1 / 9 / 2;
+}
+.Stat,
+.EffectIcons {
+  height: 100%;
   max-width: 100%;
   display: flex;
   align-items: center;

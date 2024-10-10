@@ -9,13 +9,27 @@
     <title>TCRPG</title>
   </head>
   <body>
+    <div id="start-screen" class="overlay">
+      <p>TCRPG</p>
+      <div id="tutorial" class="start-screen-btn">Tutorial</div>
+      <div id="start-game" class="start-screen-btn">Start Game</div>
+      <div></div>
+    </div>
     <div id="deck-overlay" class="overlay">
-      <div id="deck-div" ></div>
-      <img id="deck-overlay-cancel" class="overlay-cancel" src="./assets/no.png" />
+      <div id="deck-div"></div>
+      <img
+        id="deck-overlay-cancel"
+        class="overlay-cancel"
+        src="./assets/no.png"
+      />
     </div>
     <div id="discard-overlay" class="overlay">
       <div id="discard-div"></div>
-      <img id="discard-overlay-cancel" class="overlay-cancel" src="./assets/no.png" />
+      <img
+        id="discard-overlay-cancel"
+        class="overlay-cancel"
+        src="./assets/no.png"
+      />
     </div>
     <div id="field-pannel">
       <div class="field">
@@ -28,9 +42,7 @@
         <div id="hero-container"></div>
       </div>
       <div id="pannel">
-        <p id="level-p">
-          Level <span id="level-counter"></span>
-        </p>
+        <p id="level-p">Level <span id="level-counter"></span></p>
         <p id="turn-p">
           Turn <span id="turn-counter"></span> :
           <span id="phase-id"></span> phase
@@ -53,6 +65,7 @@
       </div>
     </div>
     <div id="hand"></div>
+    <div id="dialog-div"></div>
     <script src="./domref.js"></script>
     <script src="./card_baseclass.js"></script>
     <script src="./card_derivedclass.js"></script>
@@ -63,5 +76,7 @@
     <script src="./deck.js"></script>
     <script src="./level.js"></script>
     <script src="./gameloop.js"></script>
+    <script src="./tutorial.js"></script>
+    <script src="./startscreen.js"></script>
   </body>
 </html>

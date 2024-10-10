@@ -13,16 +13,32 @@ body {
   display: none;
   z-index: 60;
 }
-#tooltip {
-  visibility: hidden;
-  position: absolute;
-  border: 3px solid black;
-  border-radius: 10px;
-  background-color: rgba(128, 128, 128, 0.64);
-  z-index: 100;
-  padding: 10px;
-  font-weight: bold;
+
+#start-screen {
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
+.start-screen-btn {
+  width: 70%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.start-screen-btn:hover {
+  opacity: 0.8;
+}
+#start-game {
+  background-color: blue;
+}
+#tutorial {
+  background-color: pink;
+}
+
 #deck-div,
 #discard-div {
   display: flex;
@@ -43,6 +59,30 @@ body {
 }
 .overlay-cancel:hover {
   opacity: 0.8;
+}
+#start-screen {
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.start-screen-btn {
+  width: 70%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.start-screen-btn:hover {
+  opacity: 0.8;
+}
+#start-game {
+  background-color: blue;
+}
+#tutorial {
+  background-color: pink;
 }
 
 #field-pannel {
@@ -150,4 +190,27 @@ body {
   flex-direction: row;
   justify-content: space-evenly;
   height: 20vh;
+}
+
+#tooltip {
+  visibility: hidden;
+  position: absolute;
+  border: 3px solid black;
+  border-radius: 10px;
+  background-color: rgba(128, 128, 128, 0.64);
+  z-index: 100;
+  padding: 10px;
+  font-weight: bold;
+}
+
+#dialog-div{
+  display: none;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0%;
+  left: 0%;
+  width: 90%;
+  background-color: green;
 }

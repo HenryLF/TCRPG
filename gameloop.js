@@ -1,3 +1,4 @@
+let player;
 function WaitForUserInput() {
   let Inputs = Array.from(
     document.querySelectorAll(".field #input, #hand #input")
@@ -31,28 +32,29 @@ async function WaitForUserSelection(cssSelector) {
   for (let input of validInput) {
     input.className = input.object.className;
   }
-  if(userInput === true || userInput === false){
-    return userInput
-  }
-  else if (userInput.matches(cssSelector)) {
+  if (userInput === true || userInput === false) {
     return userInput;
+  } else if (userInput.matches(cssSelector)) {
+    return userInput;
+  } else {
+    return await WaitForUserSelection(cssSelector);
   }
-}
-
-function initLevel() {
-  levelCountSpan.innerText = levelCounter
-  LevelGenerator(levelCounter)
 }
 
 let turnCounter = 0;
 let levelCounter = 0;
+function initLevel() {
+  levelCountSpan.innerText = levelCounter;
+  LevelGenerator(levelCounter);
+  turnCounter = 0;
+}
 async function initTurn() {
-  turnCounter++;
-  turnCountSpan.innerText = turnCounter;
   if (monsterOnField() == 0) {
     levelCounter++;
     initLevel();
   }
+  turnCounter++;
+  turnCountSpan.innerText = turnCounter;
   await playerDraw();
   playerPhase();
 }
@@ -111,11 +113,3 @@ async function enemyPhase() {
   initTurn();
   return;
 }
-
-let player = new Hero(8, 3, 2);
-hero_div.appendChild(player.div);
-
-
-
-playerDraw();
-initTurn();
