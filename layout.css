@@ -42,6 +42,24 @@ body {
   background-color: pink;
 }
 
+#next-level-overlay {
+  justify-content: space-around;
+  align-items: center;
+}
+
+.reward-btn {
+  width: 20%;
+  height: 60%;
+  background-color: aqua;
+  border: 10px solid black;
+  display: flex ;
+  align-items: center;
+  justify-content: center;
+}
+.reward-btn:hover{
+  opacity: .8;
+}
+
 #deck-div,
 #discard-div {
   display: flex;
@@ -51,7 +69,7 @@ body {
 #deck-div .card,
 #discard-div .card {
   width: 20%;
-  aspect-ratio: 1;
+  height: 20%;
   margin: 2%;
 }
 .overlay-cancel {
@@ -206,7 +224,7 @@ body {
   font-weight: bold;
 }
 
-#dialog-div{
+#dialog-div {
   display: none;
   flex-direction: row;
   justify-content: center;
@@ -221,5 +239,5 @@ body {
   border-radius: 10px;
   font-size: 200%;
   text-align: center;
-  text-justify:inter-word ;
+  text-justify: inter-word;
 }

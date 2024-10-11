@@ -22,6 +22,14 @@
   background-repeat: no-repeat;
   background-position: center;
 }
+.CardLookup{
+  width: 50%;
+  height: 50%;
+  position: fixed;
+}
+.CardLookup:hover{
+  transform: scale(1.2);
+}
 .blocker.card {
   background-color: red;
   background-image: url("./assets/backgroundBlocker.png");

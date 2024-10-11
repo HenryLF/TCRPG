@@ -3,7 +3,7 @@
   z-index: 99;
   /* animation: none; */
 }
-#hand .card:hover {
+.card:hover {
   transform: scale(1.2);
   z-index: 99;
 }

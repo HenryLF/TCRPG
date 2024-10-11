@@ -6,6 +6,7 @@ class Card {
   img = "./assets/cards/placeholder.png";
   desc = "A playable card.";
   className = "card";
+  LVL_UI = new Object()
   constructor(lvl) {
     this.LVL = lvl;
   }
@@ -63,5 +64,6 @@ class Card {
   }
   levelUp() {
     this.LVL += 1;
+    this.LVL_UI.innerText = this.LVL
   }
 }

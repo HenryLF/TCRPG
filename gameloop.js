@@ -10,8 +10,8 @@ function WaitForUserInput() {
         while (rtn.id != "input") {
           rtn = rtn.parentNode;
         }
-        resolve(rtn);
         input.onclick = undefined;
+        resolve(rtn);
       };
       skipButton.onclick = (e) => {
         reject(true);
@@ -24,7 +24,9 @@ function WaitForUserInput() {
 }
 
 async function WaitForUserSelection(cssSelector) {
-  let validInput = document.querySelectorAll(cssSelector);
+  let validInput = document.querySelectorAll(
+    "#hand" + cssSelector + ",.field" + cssSelector
+  );
   for (let input of validInput) {
     input.className += " validInput";
   }
@@ -43,16 +45,20 @@ async function WaitForUserSelection(cssSelector) {
 
 let turnCounter = 0;
 let levelCounter = 0;
-function initLevel() {
-  levelCountSpan.innerText = levelCounter;
-  LevelGenerator(levelCounter);
-  turnCounter = 0;
+async function initLevel() {
+  if (levelCounter > 0) {
+    await getLevelReward(levelCounter);
+  }
   initDeck();
+
+  levelCounter++;
+  levelCountSpan.innerText = levelCounter;
+  turnCounter = 0;
+  LevelGenerator(levelCounter);
 }
 async function initTurn() {
   if (monsterOnField() == 0) {
-    levelCounter++;
-    initLevel();
+    await initLevel();
   }
   turnCounter++;
   turnCountSpan.innerText = turnCounter;

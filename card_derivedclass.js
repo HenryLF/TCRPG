@@ -7,7 +7,6 @@ class BlockerCard extends Card {
   HP_UI = new Object();
   ATK_UI = new Object();
   SHIELD_UI = new Object();
-  LVL_UI = new Object();
   constructor(lvl) {
     super(lvl);
   }
@@ -24,9 +23,8 @@ class BlockerCard extends Card {
     super.levelUp();
     this.HP_UI.innerText = this.HP;
     this.ATK_UI.innerText = this.ATK;
-    if (this.SHIELD) {
-      this.SHIELD_UI.innerText = this.SHIELD;
-    }
+    this.SHIELD_UI.innerText = this.SHIELD;
+
     this.LVL_UI.innerText = this.LVL;
   }
   render() {
@@ -52,14 +50,12 @@ class BlockerCard extends Card {
     p.innerText = `: ${this.ATK}`;
     this.ATK_UI = p;
     stat.appendChild(p);
-    if (this.SHIELD) {
-      stat.appendChild(createEffectIcon(SHIELD_img));
-      p = document.createElement("p");
-      p.innerText = `: ${this.SHIELD}`;
+    stat.appendChild(createEffectIcon(SHIELD_img));
+    p = document.createElement("p");
+    p.innerText = `: ${this.SHIELD}`;
 
-      this.SHIELD_UI = p;
-      stat.appendChild(p);
-    }
+    this.SHIELD_UI = p;
+    stat.appendChild(p);
 
     div.appendChild(stat);
 
@@ -89,6 +85,7 @@ class BlockerCard extends Card {
 
 class SpellCard extends Card {
   className = "spell card";
+  desc_UI = new Object();
   get spellDescription() {
     return "A spell with an effect";
   }
@@ -101,6 +98,7 @@ class SpellCard extends Card {
     let p = document.createElement("p");
     p.className = "SpellDescription";
     p.innerText = this.spellDescription;
+    this.desc_UI = p;
     div.append(p);
 
     return div;
@@ -119,6 +117,10 @@ class SpellCard extends Card {
     return false;
   }
   async spellEffect() {}
+  levelUp() {
+    super.levelUp();
+    this.desc_UI.innerText = this.spellDescription;
+  }
 }
 
 class SoulSpellCard extends SpellCard {

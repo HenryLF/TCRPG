@@ -19,9 +19,13 @@ const playerDiscardOverlayCancel = document.getElementById(
   "discard-overlay-cancel"
 );
 
+const nextLevelOverlay = document.getElementById('next-level-overlay')
+const cardRewardButton =  document.getElementById('card-reward')
+const levelRewardButton =  document.getElementById('level-reward')
+const statRewardButton =  document.getElementById('stat-reward')
 const deckButton = document.getElementById("deck-btn");
 deckButton.onclick = (e) => {
-  playerDeckOverlay.style.display = "inline";
+  playerDeckOverlay.style.display = "flex";
 };
 
 const playerDeckOverlayCancel = document.getElementById("deck-overlay-cancel");
@@ -31,7 +35,7 @@ playerDeckOverlayCancel.onclick = (e) => {
 
 const discardButton = document.getElementById("discard-btn");
 discardButton.onclick = (e) => {
-  playerDiscardOverlay.style.display = "inline";
+  playerDiscardOverlay.style.display = "flex";
 };
 playerDiscardOverlayCancel.onclick = (e) => {
   playerDiscardOverlay.style.display = "none";

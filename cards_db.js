@@ -8,9 +8,14 @@ class ArmoredBlockerCard extends BlockerCard {
 class ArmoredBlocker extends Blocker {
   name = "Armored Blocker";
   img = "./assets/cards/minions/Shielder.png";
-  preDamageEffect = [armorPreDamageEffect(2)];
-  effectIcons = [armorEffectIcon, armorEffectIcon];
   static levelScaling = [1, 2, 2];
+  constructor(){
+    super(...arguments);
+    for (let i = 0; i < this.LVL; i++) {
+      this.effectIcons.push(armorEffectIcon);
+    }
+    this.preDamageEffect = [armorPreDamageEffect(this.LVL)];
+  }
 }
 
 class SpikyBlockerCard extends BlockerCard {
@@ -21,20 +26,25 @@ class SpikyBlockerCard extends BlockerCard {
 }
 class SpikyBlocker extends Blocker {
   name = "Cactoïd";
-  onDamageEffect = [retaliateOnDamageEffect(2)];
   img = "./assets/cards/minions/cactoid.png";
   static levelScaling = [2, 2, 1];
-  effectIcons = [spikyEffectIcon, spikyEffectIcon];
+  constructor(){
+    super(...arguments);
+    for (let i = 0; i < this.LVL; i++) {
+      this.effectIcons.push(spikyEffectIcon);
+    }
+    this.onDeathEffect = [retaliateOnDamageEffect(this.LVL)];
+  }
 }
 
 class ExplosiveBlockerCard extends BlockerCard {
   name = "Xploder";
   BlockerClass = ExplosiveBlocker;
-  img = "./assets/cards/minions/Xploder.jpg";
+  img = "./assets/cards/minions/Xploder.png";
 }
 class ExplosiveBlocker extends Blocker {
   name = "Xploder";
-  img = "./assets/cards/minions/Xploder.jpg";
+  img = "./assets/cards/minions/Xploder.png";
   static levelScaling = [1, 1, 0];
   constructor() {
     super(...arguments);
@@ -77,6 +87,7 @@ class SoulSummon extends SoulSpellCard {
     if (slot) {
       let b = new SoulGuardian(2 * this.LVL * soul, 2 * this.LVL * soul);
       slot.appendChild(b.div);
+      return true
     }
     return false;
   }
