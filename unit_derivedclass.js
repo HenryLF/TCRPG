@@ -1,6 +1,6 @@
 class Blocker extends Unit {
   className = "blocker unit";
-  img = "./assets/cards/minions/ShitGobblin.png";
+  img = "./assets/cards/minions/blocker.gif";
   name = "ShitGobblin";
   static levelScaling = [1, 1, 1];
   async death() {
@@ -14,7 +14,7 @@ class Blocker extends Unit {
 class Hero extends Unit {
   className = "hero unit";
   name = "Percival";
-  img = "./assets/scrap/fire emblem/14096.png";
+  img = "./assets/player.gif";
   async action() {
     this.div.className = this.className + " attacking";
     let tgt = await WaitForUserSelection(".monster");
@@ -36,7 +36,7 @@ class Hero extends Unit {
 class Monster extends Unit {
   className = "monster unit";
   name = "Monster";
-  img = "./assets/monsters/spider.png";
+  img = "./assets/monsters/WildCat.gif";
   async action() {
     this.div.className = this.className + " attacking";
     let tgt = await WaitForUserSelection(".blocker.unit, .hero").then((t) =>

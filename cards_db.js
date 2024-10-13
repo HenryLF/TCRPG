@@ -21,12 +21,12 @@ class ArmoredBlocker extends Blocker {
 class SpikyBlockerCard extends BlockerCard {
   name = "Cactoïd";
   BlockerClass = SpikyBlocker;
-  img = "./assets/cards/minions/cactoid.png";
+  img = "./assets/cards/minions/Cactoid.gif";
   effectIcons = [spikyEffectIcon, spikyEffectIcon];
 }
 class SpikyBlocker extends Blocker {
   name = "Cactoïd";
-  img = "./assets/cards/minions/cactoid.png";
+  img = "./assets/cards/minions/Cactoid.gif";
   static levelScaling = [2, 2, 1];
   constructor(){
     super(...arguments);

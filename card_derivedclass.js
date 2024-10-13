@@ -3,7 +3,7 @@ class BlockerCard extends Card {
   BlockerClass = Blocker;
   effectIcons = [];
   name = "ShitGobblin";
-  img = "./assets/cards/minions/ShitGobblin.png";
+  img = "./assets/cards/minions/blocker.gif";
   HP_UI = new Object();
   ATK_UI = new Object();
   SHIELD_UI = new Object();

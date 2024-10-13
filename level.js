@@ -40,6 +40,7 @@ async function getRandomcard(n) {
     CardsInDeck.push(c);
     div.onclick = (e) => {
       div.onclick = undefined;
+      nextLevelOverlay.removeChild(div)
       r();
     };
   });

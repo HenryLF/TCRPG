@@ -172,7 +172,7 @@ class BlockerGrave {
 
     let img = document.createElement("img");
     img.className = "IMG";
-    img.src = "./assets/gravestone.png";
+    img.src = "./assets/BlockerSoul.gif";
     div.appendChild(img);
     return div;
   }
