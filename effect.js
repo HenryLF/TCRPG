@@ -5,8 +5,7 @@ function armorPreDamageEffect(ARMOR) {
 function retaliateOnDamageEffect(DMG) {
   return (obj, attacker) => {
     return new Promise((r) => {
-      attacker.HP -= DMG-attacker.SHIELD;
-      attacker.SHIELD -=DMG 
+      attacker.takeDamage({ ATK: DMG });
       r();
     });
   };
@@ -19,6 +18,14 @@ function explodeOnDeathEffect(DMG) {
         monster.takeDamage({ ATK: DMG });
       }
     });
+  };
+}
+
+function buffOnDamage(HP, ATK, SHIELD) {
+  return async (obj, attacker) => {
+    await obj.heal(HP);
+    obj.ATK += ATK;
+    obj.SHIELD += SHIELD;
   };
 }
 

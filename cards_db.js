@@ -9,7 +9,7 @@ class ArmoredBlocker extends Blocker {
   name = "Armored Blocker";
   img = "./assets/cards/minions/Shielder.png";
   static levelScaling = [1, 2, 2];
-  constructor(){
+  constructor() {
     super(...arguments);
     for (let i = 0; i < this.LVL; i++) {
       this.effectIcons.push(armorEffectIcon);
@@ -28,7 +28,7 @@ class SpikyBlocker extends Blocker {
   name = "Cactoïd";
   img = "./assets/cards/minions/Cactoid.gif";
   static levelScaling = [2, 2, 1];
-  constructor(){
+  constructor() {
     super(...arguments);
     for (let i = 0; i < this.LVL; i++) {
       this.effectIcons.push(spikyEffectIcon);
@@ -60,6 +60,72 @@ class SoulGuardian extends Blocker {
   img = "./assets/cards/minions/SoulGuardian.png";
 }
 
+//Monster
+class Spiker extends Monster {
+  name = "Spiker";
+  img = "./assets/monsters/Spiker.gif";
+  effectIcons = [spikyEffectIcon, spikyEffectIcon];
+  onDamageEffect = [retaliateOnDamageEffect(2)];
+}
+class BlackKnight extends Monster {
+  name = "Black Knight";
+  img = "./assets/monsters/BlackKnight.gif";
+  attack(tgt) {
+    return firstStrikeAttack(this, tgt.object);
+  }
+  effectIcons = [firstStrikeEffectIcon];
+}
+class FireKnight extends Monster {
+  name = "FireKnight";
+  img = "./assets/monsters/FireKnight.gif";
+  effectIcons = [armorEffectIcon, inFlameEffectIcon];
+  preDamageEffect = [armorPreDamageEffect(1)];
+  onDamageEffect = [buffOnDamage(0, 1, 1)];
+}
+class EggPlant extends Monster {
+  name = "Egg Plant";
+  img = "./assets/monsters/EggPlant.gif";
+  effectIcons = [lunaticEffectIcon];
+  _count = 0;
+  get lunaticCounter() {
+    return this._count;
+  }
+  set lunaticCounter(val) {
+    this._count = val;
+    console.log(this._count);
+    this.ATK = Math.min(5 + 5 * this._count, 30);
+    if (this._count == 6) {
+      this.attack = (tgt) => firstStrikeAttack(this, tgt.object);
+      this.effectIcons.push[firstStrikeAttack];
+      this.img = "./assets/monsters/EggPlantPoped.gif";
+      this.reRender();
+    }
+    if (this._count > 6) {
+      this.effectIcons.push(multiAttackEffectIcon);
+      this.action = async () => {
+        for (let i = 0; i < this._count - 5; i++) {
+          await super.action();
+        }
+        this.lunaticCounter = this.lunaticCounter + 1;
+      };
+      this.reRender();
+    }
+  }
+  async action() {
+    await super.action();
+    this.lunaticCounter = this.lunaticCounter + 1;
+  }
+}
+
+class CaptainSpirit extends MonsterLeader {
+  img = "./assets/monsters/PirateGhost.gif";
+  name = "Captain Spirit";
+}
+class GhostPirate extends Monster {
+  name = "Ghost Pirate";
+  img = "./assets/monsters/Pirate.gif";
+}
+
 //Spell
 
 class SoulStorm extends SoulSpellCard {
@@ -87,7 +153,7 @@ class SoulSummon extends SoulSpellCard {
     if (slot) {
       let b = new SoulGuardian(2 * this.LVL * soul, 2 * this.LVL * soul);
       slot.appendChild(b.div);
-      return true
+      return true;
     }
     return false;
   }

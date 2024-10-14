@@ -19,10 +19,10 @@ const playerDiscardOverlayCancel = document.getElementById(
   "discard-overlay-cancel"
 );
 
-const nextLevelOverlay = document.getElementById('next-level-overlay')
-const cardRewardButton =  document.getElementById('card-reward')
-const levelRewardButton =  document.getElementById('level-reward')
-const statRewardButton =  document.getElementById('stat-reward')
+const nextLevelOverlay = document.getElementById("next-level-overlay");
+const cardRewardButton = document.getElementById("card-reward");
+const levelRewardButton = document.getElementById("level-reward");
+const statRewardButton = document.getElementById("stat-reward");
 const deckButton = document.getElementById("deck-btn");
 deckButton.onclick = (e) => {
   playerDeckOverlay.style.display = "flex";
@@ -134,6 +134,21 @@ explosiveEffectIcon.className = "Icons";
 explosiveEffectIcon.txt =
   "Explosive: On death will inflict damage to every enemy.";
 
+const inFlameEffectIcon = document.createElement("img");
+inFlameEffectIcon.src = "./assets/fire.png";
+inFlameEffectIcon.className = "Icons";
+inFlameEffectIcon.txt = "On damage: will buff itself by 0/1/1.";
+
+const lunaticEffectIcon = document.createElement("img")
+lunaticEffectIcon.src = './assets/human.png'
+lunaticEffectIcon.className = 'Icons'
+lunaticEffectIcon.txt = 'The longer the combat gets... crazier it becomes...'
+
+const multiAttackEffectIcon = document.createElement("img")
+multiAttackEffectIcon.src = './assets/fist.png'
+multiAttackEffectIcon.className = 'Icons'
+multiAttackEffectIcon.txt = 'Get one more attack.'
+
 const iconTooltip = document.createElement("div");
 iconTooltip.id = "tooltip";
 document.body.append(iconTooltip);
@@ -157,9 +172,13 @@ function createDialog(Text) {
   return new Promise((r) => {
     dialogDiv.innerText = Text;
     dialogDiv.style.display = "flex";
-    window.addEventListener("click", (e) => {
-      dialogDiv.style.display = "none";
-      r();
-    },{once:true});
+    window.addEventListener(
+      "click",
+      (e) => {
+        dialogDiv.style.display = "none";
+        r();
+      },
+      { once: true }
+    );
   });
 }

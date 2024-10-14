@@ -98,12 +98,17 @@ class Unit {
     this._div = this.render();
     return this._div;
   }
+  reRender() {
+    let parent = this._div.parentNode;
+    parent.removeChild(this._div);
+    this._div = this.render();
+    parent.appendChild(this._div);
+  }
 
   async takeDamage(attacker) {
     return new Promise(async (r) => {
       let reduce_dmg = attacker.ATK - this.SHIELD;
       this.SHIELD = this.SHIELD - attacker.ATK;
-      console.log(reduce_dmg);
       for (let effect of this.preDamageEffect) {
         reduce_dmg = effect(reduce_dmg);
       }
@@ -118,13 +123,15 @@ class Unit {
     });
   }
   async heal(hl) {
-    this.HP += hl;
-    await this.healAnimation();
-    return
+    if (hl > 0) {
+      this.HP += hl;
+      await this.healAnimation();
+    }
+    return;
   }
 
   async death() {
-    for (effect of this.onDeathEffect) {
+    for (let effect of this.onDeathEffect) {
       await effect(this);
     }
     await this.deathAnimation();

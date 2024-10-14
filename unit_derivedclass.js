@@ -27,24 +27,36 @@ class Hero extends Unit {
     return true;
   }
   effectIcons = [firstStrikeEffectIcon];
-  death(){
-    super.death()
+  death() {
+    super.death();
     gameOver();
   }
 }
 
 class Monster extends Unit {
   className = "monster unit";
-  name = "Monster";
+  name = "Wild Cat";
   img = "./assets/monsters/WildCat.gif";
+  attack(tgt) {
+    return normalAttack(this, tgt.object);
+  }
   async action() {
     this.div.className = this.className + " attacking";
     let tgt = await WaitForUserSelection(".blocker.unit, .hero").then((t) =>
       t === true || t === false ? defaultBlocker() : t
     );
-    console.log(tgt);
     this.div.className = this.className;
-    await normalAttack(this, tgt.object);
+    await this.attack(tgt);
     return true;
+  }
+}
+
+class MonsterLeader extends Monster {
+  subordinate = [];
+  async death() {
+    super.death();
+    for (let m of this.subordinate) {
+      await m.death();
+    }
   }
 }
