@@ -61,7 +61,6 @@ function WaitForUserAugment(n) {
 async function getRandomcard(n) {
   return new Promise((r) => {
     let c = cardDrop(n);
-    console.log(c);
     let div = c.render();
     div.className += " CardLookup";
     nextLevelOverlay.appendChild(div);
@@ -116,6 +115,5 @@ const cardRewardTable = [
 function cardDrop(n) {
   let drop_lvl = Math.min(Math.floor(n / 5), cardRewardTable.length);
   let drop_index = Math.floor(Math.random() * cardRewardTable[drop_lvl].length);
-  console.log(drop_index, drop_lvl);
   return cardRewardTable[drop_lvl][drop_index];
 }

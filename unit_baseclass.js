@@ -114,7 +114,6 @@ class Unit {
       }
       if (reduce_dmg > 0) {
         for (let effect of this.onDamageEffect) {
-          console.log(attacker)
           await effect(this, attacker);
         }
         this.HP = Math.max(this.HP - reduce_dmg, 0);

@@ -92,7 +92,6 @@ class EggPlant extends Monster {
   }
   set lunaticCounter(val) {
     this._count = val;
-    console.log(this._count);
     this.ATK = Math.min(5 + 5 * this._count, 30);
     if (this._count == 6) {
       this.attack = (tgt) => firstStrikeAttack(this, tgt.object);

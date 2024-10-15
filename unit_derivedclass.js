@@ -5,7 +5,6 @@ class Blocker extends Unit {
   static levelScaling = [1, 1, 1];
   async death() {
     let parent = await super.death();
-    console.log(parent);
     let grave = new BlockerGrave();
     parent.appendChild(grave.div);
   }

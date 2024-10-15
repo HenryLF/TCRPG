@@ -5,7 +5,6 @@ function armorPreDamageEffect(ARMOR) {
 function retaliateOnDamageEffect(DMG) {
   return (obj, attacker) => {
     return new Promise((r) => {
-      console.log(attacker,arguments)
       attacker.takeDamage({ ATK: DMG });
       r();
     });

@@ -47,7 +47,6 @@ function playerDraw() {
 }
 function resetDeck() {
   for (let card of playerDiscard.children) {
-    console.log(card)
     playerDeck.appendChild(card);
   }
   cardsInDiscardSpan.innerText = playerDiscard.childElementCount;
