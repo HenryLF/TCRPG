@@ -113,11 +113,12 @@ class Unit {
         reduce_dmg = effect(reduce_dmg);
       }
       if (reduce_dmg > 0) {
-        this.HP = Math.max(this.HP - reduce_dmg, 0);
-        await this.takeDamageAnimation();
         for (let effect of this.onDamageEffect) {
+          console.log(attacker)
           await effect(this, attacker);
         }
+        this.HP = Math.max(this.HP - reduce_dmg, 0);
+        await this.takeDamageAnimation();
       }
       r();
     });

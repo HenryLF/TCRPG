@@ -33,7 +33,7 @@ class SpikyBlocker extends Blocker {
     for (let i = 0; i < this.LVL; i++) {
       this.effectIcons.push(spikyEffectIcon);
     }
-    this.onDeathEffect = [retaliateOnDamageEffect(this.LVL)];
+    this.onDamageEffect = [retaliateOnDamageEffect(this.LVL)];
   }
 }
 
