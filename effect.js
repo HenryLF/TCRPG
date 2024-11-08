@@ -5,7 +5,7 @@ function armorPreDamageEffect(ARMOR) {
 function retaliateOnDamageEffect(DMG) {
   return (obj, attacker) => {
     return new Promise((r) => {
-      attacker.takeDamage({ ATK: DMG });
+      attacker.takeDamage(new DummyUnit(DMG));
       r();
     });
   };
@@ -15,7 +15,7 @@ function explodeOnDeathEffect(DMG) {
   return (obj) => {
     return new Promise((r) => {
       for (let monster of monstersOnFieldIterator()) {
-        monster.takeDamage({ ATK: DMG });
+        monster.takeDamage(new DummyUnit(DMG));
       }
     });
   };

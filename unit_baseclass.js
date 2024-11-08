@@ -29,7 +29,7 @@ class Unit {
     return this._HP;
   }
   set ATK(x) {
-    this._ATK = x;
+    this._ATK = Math.max(x, 0);
     this.ATK_UI.innerText = `: ${this._ATK}`;
   }
   get ATK() {

@@ -59,3 +59,9 @@ class MonsterLeader extends Monster {
     }
   }
 }
+
+class DummyUnit extends Unit {
+  constructor(ATK) {
+    super(1500, ATK, 1500, 1);
+  }
+}

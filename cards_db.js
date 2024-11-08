@@ -7,7 +7,7 @@ class ArmoredBlockerCard extends BlockerCard {
 }
 class ArmoredBlocker extends Blocker {
   name = "Armored Blocker";
-  img = "./assets/cards/minions/Shielder.png";
+  img = "./assets/cards/minions/shielder.gif";
   static levelScaling = [1, 2, 2];
   constructor() {
     super(...arguments);
@@ -134,7 +134,7 @@ class SoulStorm extends SoulSpellCard {
   }
   async spellEffect(soul) {
     for (let monster of monstersOnFieldIterator()) {
-      monster.object.takeDamage({ ATK: soul * this.LVL });
+      monster.object.takeDamage(new DummyUnit(soul*this.LVL));
     }
     return true;
   }
@@ -180,7 +180,53 @@ class FireRitual extends RitualCard {
   }
   async spellEffect() {
     for (let monster of monstersOnFieldIterator()) {
-      monster.object.takeDamage({ ATK: this.LVL * 2 });
+      monster.object.takeDamage(new DummyUnit(2*this.LVL));
+    }
+  }
+}
+class WindRitual extends RitualCard {
+  name = "Wind Ritual";
+  get spellDescription() {
+    return `Sacrifice a live blocker to give ${
+      this.LVL * 2
+    } block to your hero and blockers.`;
+  }
+  async spellEffect() {
+    for (let blocker of blockersOnFieldIterator()) {
+      blocker.object.SHIELD += this.LVL * 2;
+    }
+    player.SHIELD += this.LVL * 2;
+  }
+}
+
+class WaterRitual extends RitualCard {
+  name = "Water Ritual";
+  get spellDescription() {
+    return `Sacrifice a live blocker to heal hero by ${this.LVL * 2}`;
+  }
+  async spellEffect() {
+    player.heal(this.LVL * 2);
+  }
+}
+
+class EarthRitual extends RitualCard {
+  name = "Earth Ritual";
+  get spellDescription() {
+    return `Sacrifice a live blocker to increase hero ATK by ${this.LVL}`;
+  }
+  async spellEffect() {
+    player.ATK += this.LVL;
+  }
+}
+
+class LightRitual extends RitualCard {
+  name = "Lightning Ritual";
+  get spellDescription() {
+    return `Sacrifice a live blocker to reduce monster ATK by ${this.LVL}`;
+  }
+  async spellEffect() {
+    for (let monster of monstersOnFieldIterator()) {
+      monster.object.ATK -= this.LVL;
     }
   }
 }

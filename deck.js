@@ -9,6 +9,10 @@ const CardsInDeck = [
   new SoulSummon(1),
   new FireRitual(1),
   new FireRitual(1),
+  new LightRitual(1),
+  new WindRitual(1),
+  new WaterRitual(1),
+  new EarthRitual(1),
 ];
 
 function initDeck() {
